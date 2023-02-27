@@ -29,6 +29,12 @@ h1, h2 {
 }
 
 #img img {
+  transition: scale 500ms cubic-bezier(0, 1, 0.8, 1.52), rotate 500ms cubic-bezier(0.2, 3, 0.1, 4.52);
   border-radius: 33px;
   border: 2px solid #ddd;
+}
+
+#img img:hover {
+  scale: 3;
+  rotate: 10deg;
 }
