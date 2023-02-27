@@ -5,3 +5,15 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+
+}
+
+article {
+  border-radius: 20px;
+}
