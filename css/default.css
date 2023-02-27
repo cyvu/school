@@ -8,6 +8,8 @@
 
 html {
   scroll-behavior: smooth;
+  background-color: rgb(177, 177, 177);
+  
 }
 
 body {
@@ -16,4 +18,10 @@ body {
 
 article {
   border-radius: 20px;
+  margin: 30px;
+  padding: 40px;
+}
+
+h1, h2 {
+
 }
