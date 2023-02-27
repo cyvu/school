@@ -8,8 +8,9 @@
 
 html {
   scroll-behavior: smooth;
-  background-color: rgb(177, 177, 177);
-  
+  background-color: rgb(77, 77, 77);
+  background-image: url("/img/bg12.jpg");
+  background-size: cover;
 }
 
 body {
@@ -17,11 +18,17 @@ body {
 }
 
 article {
-  border-radius: 20px;
+  background-color: rgb(188, 189, 200);
+  border-radius: 33px;
   margin: 30px;
   padding: 40px;
 }
 
 h1, h2 {
 
+}
+
+#img img {
+  border-radius: 33px;
+  border: 2px solid #ddd;
 }
