@@ -9,8 +9,8 @@ This project is meant to go through the basics of html and css, and later some m
 <summary>Disclaimer (click to open)</summary>
 <hr>
 
-> All text consisting of <code>&lt;explaination&gt;</code> should replace both the symbols and text; 
-> 
+All text consisting of <code>&lt;explaination&gt;</code> should replace both the symbols and text; 
+
 > <code>dummy command &lt;example&gt;</code>
 >
 > <code>dummy command value</code>
