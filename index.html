@@ -6,21 +6,52 @@
     <link rel="stylesheet" href="/css/default.css" media="all" />
     <link rel="stylesheet" href="/css/image_gallery.css" media="screen" />
     <title>Project School: HTML / CSS</title>
+
+    <style>
+      .grid-container {
+        display: grid;
+        grid-template-columns: 100px 100px 100px;
+        grid-template-rows: 40px;
+        justify-content: center;
+        padding: 10px;
+        position: fixed;
+        left: 42%;
+        top: 0px;
+        
+      }
+      .grid-item {
+        background-color: rgba(255, 255, 255, 0.76);
+        border: 1px solid rgba(0, 0, 0, 0.8);
+        padding: 10px;
+        font-size: 20px;
+        text-align: center;
+        
+      }
+      </style>
+
+
   </head>
   <body>
-    <header>
-      <nav>
-          <a href="#main">Home</a>
-          <a href="#img">Image</a>
-          <a href="#content">Content</a>
-      </nav>
-    </header>
-    <main>
-      <section>
-        <article id="main">
-          <h1>Main header</h1>
-          <p>Hello &sim;</p>
-        </article>
+    <nav>
+      <div class="grid-container">
+        <div class="grid-item"> <a href="#main">Home</a></div>
+        <div class="grid-item"> <a href="#img">Image</a></div>
+        <div class="grid-item"> <a href="#content">Content</a></div>  
+      </div>
+
+    </nav>
+    <nav>
+        <a href="#main">Home</a>
+        <a href="#img">Image</a>
+        <a href="#content">Content</a>
+        </a>
+    </nav>
+    <section>
+      <article id="main">
+        <h1>Main header</h1>
+        <p>Hello :)</p>
+        <p>This is second paragraf</p>
+      </article>
 
         <article id="img">
           <h1>Truely Beautiful</h1>
