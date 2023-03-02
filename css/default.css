@@ -39,3 +39,11 @@ h1, h2 {
   scale: 3;
   rotate: 10deg;
 }
+
+footer {
+  text-align: center;
+  padding: 3px;
+  background-color: #ddd;
+  color: rgb(7, 7, 7);
+  height: 100px;
+}
