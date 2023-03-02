@@ -5,13 +5,39 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="/css/default.css" />
     <title>Project School: HTML / CSS</title>
+
+    <style>
+      .grid-container {
+        display: grid;
+        grid-template-columns: 100px 100px 100px;
+        grid-template-rows: 40px;
+        justify-content: center;
+        padding: 10px;
+        position: fixed;
+        left: 42%;
+        top: 0px;
+        
+      }
+      .grid-item {
+        background-color: rgba(255, 255, 255, 0.76);
+        border: 1px solid rgba(0, 0, 0, 0.8);
+        padding: 10px;
+        font-size: 20px;
+        text-align: center;
+        
+      }
+      </style>
+
+
   </head>
   <body>
     <nav>
-        <a href="#main">Home</a>
-        <a href="#img">Image</a>
-        <a href="#content">Content</a>
-        </a>
+      <div class="grid-container">
+        <div class="grid-item"> <a href="#main">Home</a></div>
+        <div class="grid-item"> <a href="#img">Image</a></div>
+        <div class="grid-item"> <a href="#content">Content</a></div>  
+      </div>
+
     </nav>
     <section>
       <article id="main">
