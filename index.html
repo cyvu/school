@@ -14,8 +14,7 @@
       
       /* Slideshow container */
       .slideshow-container {
-        width: 300px;
-        height: 300px;
+        max-width: 200px;
         position: relative;
         margin: auto;
       }
@@ -98,8 +97,7 @@
       @media only screen and (max-width: 300px) {
         .prev, .next,.text {font-size: 11px}
       }
-      </style>
-
+      </style>  
 
 
   </head>
@@ -124,13 +122,13 @@
 
           <div class="mySlides fade">
             <div class="numbertext">1 / 10</div>
-            <img src="/img/bg.jpg" style="height:20000px">
+            <img src="/img/bg.jpg" style="width:200px" style="height:200px">
             <div class="text">First Beauty</div>
           </div>
           
           <div class="mySlides fade">
             <div class="numbertext">2 / 10</div>
-            <img src="/img/bg1.jpg" style="width:100%">
+            <img src="/img/bg1.jpg" style="width:200px" style="height:200px">
             <div class="text">Second Beauty</div>
           </div>
           
@@ -193,6 +191,12 @@
             <span class="dot" onclick="currentSlide(2)"></span> 
             <span class="dot" onclick="currentSlide(3)"></span> 
             <span class="dot" onclick="currentSlide(4)"></span> 
+            <span class="dot" onclick="currentSlide(5)"></span> 
+            <span class="dot" onclick="currentSlide(6)"></span> 
+            <span class="dot" onclick="currentSlide(7)"></span> 
+            <span class="dot" onclick="currentSlide(8)"></span> 
+            <span class="dot" onclick="currentSlide(9)"></span> 
+            <span class="dot" onclick="currentSlide(10)"></span> 
           </div>
           
           <script>
@@ -223,7 +227,7 @@
             dots[slideIndex-1].className += " active";
           }
           </script>
-          <p style="text-align:center;"></p>Hello again :|</p>
+          <p style="text-align:center;">Hello again :|</p>
       </article>
 
       <article id="content">
