@@ -5,30 +5,6 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="/css/default.css" />
     <title>Project School: HTML / CSS</title>
-
-    <style>
-      .grid-container {
-        display: grid;
-        grid-template-columns: 100px 100px 100px;
-        grid-template-rows: 40px;
-        justify-content: center;
-        padding: 10px;
-        position: fixed;
-        left: 42%;
-        top: 0px;
-        
-      }
-      .grid-item {
-        background-color: rgba(255, 255, 255, 0.76);
-        border: 1px solid rgba(0, 0, 0, 0.8);
-        padding: 10px;
-        font-size: 20px;
-        text-align: center;
-        
-      }
-      </style>
-
-
   </head>
   <body>
     <nav>
@@ -48,8 +24,111 @@
 
       <article id="img">
         <h1>Truely Beautiful</h1>
-        <img src="/img/bg.jpg" alt="background image with appaling size" width="200" height="200">
-        <p>Hello again :|</p>
+        
+        <div class="slideshow-container">
+
+          <div class="mySlides fade">
+            <div class="numbertext">1 / 10</div>
+            <img src="/img/bg.jpg" style="width:100%">
+            <div class="text">First Beauty</div>
+          </div>
+          
+          <div class="mySlides fade">
+            <div class="numbertext">2 / 10</div>
+            <img src="/img/bg1.jpg" style="width:100%">
+            <div class="text">Second Beauty</div>
+          </div>
+          
+          <div class="mySlides fade">
+            <div class="numbertext">3 / 10</div>
+            <img src="/img/bg2.jpg" style="width:100%">
+            <div class="text">Third Beauty</div>
+          </div>
+
+          <div class="mySlides fade">
+            <div class="numbertext">4 / 10</div>
+            <img src="/img/bg3.jpg" style="width:100%">
+            <div class="text">Fourth Beauty</div>
+          </div>
+
+          <div class="mySlides fade">
+            <div class="numbertext">5 / 10</div>
+            <img src="/img/bg4.jpg" style="width:100%">
+            <div class="text">Fifth Beauty</div>
+          </div>
+
+          <div class="mySlides fade">
+            <div class="numbertext">6 / 10</div>
+            <img src="/img/bg5.jpg" style="width:100%">
+            <div class="text">Sixth Beauty</div>
+          </div>
+
+          <div class="mySlides fade">
+            <div class="numbertext">7 / 10</div>
+            <img src="/img/bg6.jpg" style="width:100%">
+            <div class="text">Seventh Beauty</div>
+          </div>
+
+          <div class="mySlides fade">
+            <div class="numbertext">8 / 10</div>
+            <img src="/img/bg7.jpg" style="width:100%">
+            <div class="text">Eighth Beauty</div>
+          </div>
+
+          <div class="mySlides fade">
+            <div class="numbertext">9 / 10</div>
+            <img src="/img/bg8.jpg" style="width:100%">
+            <div class="text">Ninth Beauty</div>
+          </div>
+
+          <div class="mySlides fade">
+            <div class="numbertext">10 / 10</div>
+            <img src="/img/bg9.jpg" style="width:100%">
+            <div class="text">Tenth Beauty</div>
+          </div>
+          
+          <a class="prev" onclick="plusSlides(-1)">❮</a>
+          <a class="next" onclick="plusSlides(1)">❯</a>
+          
+          </div>
+          <br>
+          
+          <div style="text-align:center">
+            <span class="dot" onclick="currentSlide(1)"></span> 
+            <span class="dot" onclick="currentSlide(2)"></span> 
+            <span class="dot" onclick="currentSlide(3)"></span> 
+            <span class="dot" onclick="currentSlide(4)"></span> 
+          </div>
+          
+          <script>
+          let slideIndex = 1;
+          showSlides(slideIndex);
+          
+          function plusSlides(n) {
+            showSlides(slideIndex += n);
+          }
+          
+          function currentSlide(n) {
+            showSlides(slideIndex = n);
+          }
+          
+          function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            let dots = document.getElementsByClassName("dot");
+            if (n > slides.length) {slideIndex = 1}    
+            if (n < 1) {slideIndex = slides.length}
+            for (i = 0; i < slides.length; i++) {
+              slides[i].style.display = "none";  
+            }
+            for (i = 0; i < dots.length; i++) {
+              dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex-1].style.display = "block";  
+            dots[slideIndex-1].className += " active";
+          }
+          </script>
+          <p>Hello again :|</p>
       </article>
 
       <article id="content">
