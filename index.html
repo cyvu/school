@@ -4,22 +4,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="UTF-8">
     <link rel="stylesheet" href="/css/default.css" />
+    <link rel="stylesheet" href="/css/image_gallery.css" />
     <title>Project School: HTML / CSS</title>
   </head>
   <body>
     <nav>
-      <div class="grid-container">
-        <div class="grid-item"> <a href="#main">Home</a></div>
-        <div class="grid-item"> <a href="#img">Image</a></div>
-        <div class="grid-item"> <a href="#content">Content</a></div>  
-      </div>
-
+        <a href="#main">Home</a>
+        <a href="#img">Image</a>
+        <a href="#content">Content</a>
     </nav>
     <section>
       <article id="main">
         <h1>Main header</h1>
         <p>Hello :)</p>
-        <p>This is second paragraf</p>
       </article>
 
       <article id="img">
@@ -29,61 +26,61 @@
 
           <div class="mySlides fade">
             <div class="numbertext">1 / 10</div>
-            <img src="/img/bg.jpg" style="width:200px" style="height:200px">
+            <img src="/img/bg.jpg" width=200px height=200px width=200px height=200px>
             <div class="text">First Beauty</div>
           </div>
           
           <div class="mySlides fade">
             <div class="numbertext">2 / 10</div>
-            <img src="/img/bg1.jpg" style="width:200px" style="height:200px">
+            <img src="/img/bg1.jpg" width=200px height=200px>
             <div class="text">Second Beauty</div>
           </div>
           
           <div class="mySlides fade">
             <div class="numbertext">3 / 10</div>
-            <img src="/img/bg2.jpg" style="width:200px" style="height:200px">
+            <img src="/img/bg2.jpg" width=200px height=200px>
             <div class="text">Third Beauty</div>
           </div>
 
           <div class="mySlides fade">
             <div class="numbertext">4 / 10</div>
-            <img src="/img/bg3.jpg" style="width:200px" style="height:200px">
+            <img src="/img/bg3.jpg" width=200px height=200px>
             <div class="text">Fourth Beauty</div>
           </div>
 
           <div class="mySlides fade">
             <div class="numbertext">5 / 10</div>
-            <img src="/img/bg4.jpg" style="width:200px" style="height:200px">
+            <img src="/img/bg4.jpg" width=200px height=200px>
             <div class="text">Fifth Beauty</div>
           </div>
 
           <div class="mySlides fade">
             <div class="numbertext">6 / 10</div>
-            <img src="/img/bg5.jpg" style="width:200px" style="height:200px">
+            <img src="/img/bg5.jpg" width=200px height=200px>
             <div class="text">Sixth Beauty</div>
           </div>
 
           <div class="mySlides fade">
             <div class="numbertext">7 / 10</div>
-            <img src="/img/bg6.jpg" style="width:200px" style="height:200px">
+            <img src="/img/bg6.jpg" width=200px height=200px>
             <div class="text">Seventh Beauty</div>
           </div>
 
           <div class="mySlides fade">
             <div class="numbertext">8 / 10</div>
-            <img src="/img/bg7.jpg" style="width:200px" style="height:200px">
+            <img src="/img/bg7.jpg" width=200px height=200px>
             <div class="text">Eighth Beauty</div>
           </div>
 
           <div class="mySlides fade">
             <div class="numbertext">9 / 10</div>
-            <img src="/img/bg8.jpg" style="width:200px" style="height:200px">
+            <img src="/img/bg8.jpg" width=200px height=200px>
             <div class="text">Ninth Beauty</div>
           </div>
 
           <div class="mySlides fade">
             <div class="numbertext">10 / 10</div>
-            <img src="/img/bg9.jpg" style="width:200px" style="height:200px">
+            <img src="/img/bg9.jpg" width=200px height=200px>
             <div class="text">Tenth Beauty</div>
           </div>
           
@@ -105,36 +102,6 @@
             <span class="dot" onclick="currentSlide(9)"></span> 
             <span class="dot" onclick="currentSlide(10)"></span> 
           </div>
-          
-          <script>
-          let slideIndex = 1;
-          showSlides(slideIndex);
-          
-          function plusSlides(n) {
-            showSlides(slideIndex += n);
-          }
-          
-          function currentSlide(n) {
-            showSlides(slideIndex = n);
-          }
-          
-          function showSlides(n) {
-            let i;
-            let slides = document.getElementsByClassName("mySlides");
-            let dots = document.getElementsByClassName("dot");
-            if (n > slides.length) {slideIndex = 1}    
-            if (n < 1) {slideIndex = slides.length}
-            for (i = 0; i < slides.length; i++) {
-              slides[i].style.display = "none";  
-            }
-            for (i = 0; i < dots.length; i++) {
-              dots[i].className = dots[i].className.replace(" active", "");
-            }
-            slides[slideIndex-1].style.display = "block";  
-            dots[slideIndex-1].className += " active";
-          }
-          </script>
-          <p style="text-align:center;">Hello again :|</p>
       </article>
 
       <article id="content">
@@ -152,4 +119,5 @@
       <p><a href="mailto:OppaiMaster69@simpmail.com">OppaiMaster69@simpmail.com</a></p>
     </footer> 
   </body>
+  <script src="/js/image_gallery.js"></script>
 </html>

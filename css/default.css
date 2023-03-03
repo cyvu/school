@@ -13,9 +13,7 @@ html {
   background-size: cover;
 }
 
-body {
-
-}
+body {font-family: Verdana, sans-serif; margin:0}
 
 article {
   background-color: rgb(188, 189, 200);
@@ -25,19 +23,7 @@ article {
 }
 
 h2 {
-  text-align: center
-}
-
-
-#img img {
-  transition: scale 500ms cubic-bezier(0, 1, 0.8, 1.52), rotate 500ms cubic-bezier(0.2, 3, 0.1, 4.52);
-  border-radius: 33px;
-  border: 2px solid #ddd;
-}
-
-#img img:hover {
-  scale: 3;
-  rotate: 10deg;
+  text-align: center;
 }
 
 footer {
