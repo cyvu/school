@@ -45,9 +45,9 @@ function displayImages(nrOfImages, caption=imageCaptions()) {
 function constructGalleryImage(currentImage, nrOfImages, url, caption) {
   return `
   <div class="mySlides fade">
-    <p class="numbertext">${currentImage+1} / ${nrOfImages}</p>
-    <img defer src="${url}" width=200 height=200>
-    <p class="text">${caption}</p>
+    <p class="gallery-count">${currentImage+1} / ${nrOfImages}</p>
+    <img defer src="${url}" width=300 height=300>
+    <p class="caption">${caption}</p>
   </div>
   `
 }
@@ -71,7 +71,7 @@ function displaySlideShortcut(nrOfImages) {
   slideshow_container.append(div);
 
   for (let current=0; current<nrOfImages; current++) {
-    const shortcut = document.createElement("span");
+    const shortcut = document.createElement("a");
     shortcut.classList.add("dot")
     div.appendChild(shortcut)
   }
