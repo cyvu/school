@@ -14,7 +14,26 @@ html {
 }
 
 body {
+  display: grid;
+  grid-template-areas:
+  "header header"
+  "aside main"
+  "footer footer";
+  grid-template-rows: auto 1fr auto;
+  grid-template-columns: 4em auto;
   font-family: Roboto, sans-serif;
+}
+
+header {
+  grid-area: header;
+}
+
+main {
+  grid-area: main;
+}
+
+footer {
+  grid-area: footer;
 }
 
 article {
@@ -38,9 +57,14 @@ img {
 }
 
 footer {
+  display: flex;
+  justify-content: center;
+  align-self: auto;
+  position: sticky;
+  bottom: 0;
   text-align: center;
-  padding: 3px;
-  background-color: #ddd;
-  color: rgb(7, 7, 7);
-  height: 100px;
+  padding: 3em;
+  background-color: #141518;
+  color: #c8c8c8;
+  min-height: 100px;
 }
