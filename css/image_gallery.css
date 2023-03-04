@@ -147,8 +147,6 @@
   animation-duration: 350ms;
 }
 
-
-
 @keyframes fade {
   from {opacity: .75} 
   to {opacity: 1}
