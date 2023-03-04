@@ -73,6 +73,18 @@ footer > address > a:hover {
   text-decoration: underline;
 }
 
+header {
+  grid-area: header;
+}
+
+main {
+  grid-area: main;
+}
+
+footer {
+  grid-area: footer;
+}
+
 article {
   background-color: rgb(188, 189, 200);
   border-radius: 33px;
@@ -88,4 +100,21 @@ article#img section {
 
 h1, h2, h3, h4, h5, h6 {
   text-align: center;
+}
+
+img {
+  border-radius: 50px;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-self: auto;
+  position: sticky;
+  bottom: 0;
+  text-align: center;
+  padding: 3em;
+  background-color: #141518;
+  color: #c8c8c8;
+  min-height: 100px;
 }
