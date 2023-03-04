@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400,500,600,700,800,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 * {
   margin: 0;
@@ -14,7 +14,7 @@ html {
 }
 
 body {
-
+  font-family: Roboto, sans-serif;
 }
 
 article {
@@ -24,17 +24,14 @@ article {
   padding: 40px;
 }
 
-h1, h2 {
-
+article#img section {
+  display: flex;
+  place-content: center;
 }
 
-#img img {
-  transition: scale 500ms cubic-bezier(0, 1, 0.8, 1.52), rotate 500ms cubic-bezier(0.2, 3, 0.1, 4.52);
-  border-radius: 33px;
-  border: 2px solid #ddd;
+h1, h2, h3, h4, h5, h6 {
+  text-align: center;
 }
 
-#img img:hover {
-  scale: 3;
-  rotate: 10deg;
+img {
 }

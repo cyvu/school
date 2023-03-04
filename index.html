@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-US">
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="/css/default.css" />
+    <link rel="stylesheet" href="/css/default.css" media="all" />
+    <link rel="stylesheet" href="/css/image_gallery.css" media="screen" />
     <title>Project School: HTML / CSS</title>
   </head>
   <body>
@@ -11,23 +12,22 @@
         <a href="#main">Home</a>
         <a href="#img">Image</a>
         <a href="#content">Content</a>
-        </a>
     </nav>
     <section>
       <article id="main">
         <h1>Main header</h1>
-        <p>Hello :)</p>
-        <p>This is second paragraf</p>
+        <p>Hello &sim;</p>
       </article>
 
       <article id="img">
         <h1>Truely Beautiful</h1>
-        <img src="/img/bg.jpg" alt="background image with appaling size" width="200" height="200">
-        <p>Hello again :|</p>
+          <section>
+          <div class="slideshow-container"></div>
+        </section>
       </article>
 
       <article id="content">
-        <p>Things that I hate</p>
+        <p>Things that I endure</p>
         <ol>
             <li>Coding</li>
             <li>Coding</li>
@@ -37,4 +37,5 @@
       </article>
     </section>
   </body>
+  <script defer src="/js/image_gallery.js"></script>
 </html>
