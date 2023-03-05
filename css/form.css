@@ -1,0 +1,39 @@
+#form-todo {
+  margin: 0 auto;
+}
+
+#form-todo > ul {
+  display: flex;
+  align-self: center;
+  align-items: flex-start;
+  align-content: space-between;
+  justify-self: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  list-style: none;
+  margin: 0 auto;
+  padding: 1px;
+  max-width: 1000px;
+}
+
+#form-todo > ul > li {
+  justify-content: stretch;
+  align-self: stretch;
+  background: #acabaa;
+  padding: 1em 2em;
+  border-radius: 33px;
+  width: 100%;
+}
+
+#form-todo > ul > li:first-child {width: auto;}
+#form-todo > ul > li:nth-child(2) {width:100%;}
+#form-todo > ul > li:nth-child(3) {width:300px;}
+#form-todo > ul > li:nth-child(4) {width:300px;}
+
+#form-todo > ul > li > input[type="text"] {
+  margin: 0 1em;
+  padding: 0 1em;
+  height: 100%;
+  width: 80%;
+  border-radius: 33px;
+}
