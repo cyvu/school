@@ -70,12 +70,6 @@ function constructToDoList(nrOfItems) {
   for (let i=0; i<nrOfItems; i++) {
     addTodoListItem(i)
   }
-  
-  //document.createElement("input")
-  console.log(item)
-
-  const target = document.querySelector("#form-todo")
-  target.appendChild(item)
 }
 
 function finalForm() {
