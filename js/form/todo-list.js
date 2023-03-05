@@ -3,6 +3,13 @@ finalForm()
 
 function addTodoListItem(index) {
 
+  /* Layout */
+  const list = document.createElement("ul")
+  const entry1 = document.createElement("li")
+  const entry2 = document.createElement("li")
+  const entry3 = document.createElement("li")
+  const entry4 = document.createElement("li")
+
   /* Inputs */
   const input_checkbox = document.createElement("input")
   input_checkbox.setAttribute("type", "checkbox")
@@ -41,13 +48,22 @@ function addTodoListItem(index) {
 
   /* Construct the form item */
   const target = document.querySelector("#form-todo")
-  target.appendChild(input_checkbox)
-  target.appendChild(label_text)
-  target.appendChild(input_text)
-  target.appendChild(label_date_add)
-  target.appendChild(input_date_add)
-  target.appendChild(label_date_check)
-  target.appendChild(input_date_check)
+  target.appendChild(list)
+
+  list.appendChild(entry1)
+  entry1.appendChild(input_checkbox)
+
+  list.appendChild(entry2)
+  entry2.appendChild(label_text)
+  entry2.appendChild(input_text)
+
+  list.appendChild(entry3)
+  entry3.appendChild(label_date_add)
+  entry3.appendChild(input_date_add)
+
+  list.appendChild(entry4)
+  entry4.appendChild(label_date_check)
+  entry4.appendChild(input_date_check)
 
   return (label)
 }
