@@ -64,12 +64,12 @@ function addTodoListItem(index) {
   list.appendChild(entry4)
   entry4.appendChild(label_date_check)
   entry4.appendChild(input_date_check)
-
-  return (label)
 }
 
 function constructToDoList(nrOfItems) {
-  const item = addTodoListItem(1)
+  for (let i=0; i<nrOfItems; i++) {
+    addTodoListItem(i)
+  }
   
   //document.createElement("input")
   console.log(item)
@@ -79,5 +79,5 @@ function constructToDoList(nrOfItems) {
 }
 
 function finalForm() {
-  constructToDoList(1)
+  constructToDoList(5)
 }
