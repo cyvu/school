@@ -1,4 +1,4 @@
-# html-css
+# html-css-js-mysql
 ## Time to learn
 This project is meant to go through the basics of html and css, and later some more advanced techniques
 <br />
