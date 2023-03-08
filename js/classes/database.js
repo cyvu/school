@@ -47,10 +47,21 @@ class Database
       }
     })
   }
+  
+  delete(table, field, value){
+    this.connection.query(`DELETE FROM ${table} WHERE ${field}= "${value}"`, function (err, rows, fields) {
+      if (err) throw err
+      if (rows) {
+        process.stdout.write(JSON.stringify( rows ))
+      }
+    }) 
+  }
 }
 
 const db = new Database()
 db.isConnected()
-//db.write('persons', `2, "Spring", "Blixted", "Some gata 1", "Höteborg"`)
+db.write('persons', `2, "Spring", "Blixted", "Some gata 1", "Höteborg"`)
+db.read('persons', 'LastName')
+db.delete('persons', 'LastName', 'Spring')
 db.read('persons', 'LastName')
 db.closeConnection()
