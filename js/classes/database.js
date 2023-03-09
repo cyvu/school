@@ -56,6 +56,15 @@ class Database
       }
     }) 
   }
+
+  update(table, field, value){
+    this.connection.query(`UPDATE ${table} SET ${field}  WHERE ${field}= "${value}"`, function (err, rows, fields) {
+      if (err) throw err
+      if (rows) {
+        process.stdout.write(JSON.stringify( rows ))
+      }
+    }) 
+  }
 }
 
 const db = new Database()
@@ -64,4 +73,5 @@ db.write('persons', `2, "Spring", "Blixted", "Some gata 1", "Höteborg"`)
 db.read('persons', 'LastName')
 db.delete('persons', 'LastName', 'Spring')
 db.read('persons', 'LastName')
+db.update ('persons',)
 db.closeConnection()
