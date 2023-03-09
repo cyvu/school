@@ -22,12 +22,22 @@
     <section id="usercontrol">
         <h1>User Control</h1>
 
+
+        <!-- action page.php is wrong fix or get fixed... -->
         <form action="/action_page.php" method="get">
-            <label for="fname">Search:</label>
-            <input type="text" id="fname" name="fname"><br><br>
+            <label for="search">Search:</label>
+            <input type="text" id="search" name="search"><br><br>
             <input type="submit" value="Get User">
           </form> 
 
+
+          <form action="/action_page.php" method="get">
+            <input type="submit" value="Add User"> <br>
+            <input type="submit" value="Update User"><br>
+            <input type="submit" value="Destroy User">
+          </form> 
+
+          
     </section>
 
     <section id="image">
