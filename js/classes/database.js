@@ -63,7 +63,7 @@ class Database
   }
 
   update(table, field, value){
-    this.connection.query(`UPDATE ${table} SET ${field}  WHERE ${field}= "${value}"`, function (err, rows, fields) {
+    this.connection.query(`UPDATE ${table} SET ${field} = "${value}"  WHERE ${field}= "${value}"`, function (err, rows, fields) {
       if (err) throw err
       if (rows) {
         process.stdout.write(JSON.stringify( rows ))
@@ -78,5 +78,5 @@ db.write('persons', `2, "Spring", "Blixted", "Some gata 1", "Höteborg"`)
 db.read('persons', 'LastName')
 db.delete('persons', 'LastName', 'Spring')
 db.read('persons', 'LastName')
-db.update ('persons',)
+db.update ('persons',`LastName = Spring2`, `LastName = Spring` )
 db.closeConnection()
