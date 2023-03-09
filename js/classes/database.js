@@ -73,8 +73,8 @@ class Database
     }) 
   }
 
-  update(table, field, value){
-    this.connection.query(`UPDATE ${table} SET ${field} = "${value}"  WHERE ${field}= "${value}"`, function (err, rows, fields) {
+  update(table, field, fieldvalue, cityfield, value){
+    this.connection.query(`UPDATE ${table} SET ${field} = "${fieldvalue}"  WHERE ${cityfield}= "${value}"`, function (err, rows, fields) {
       if (err) throw err
       if (rows) {
         process.stdout.write(JSON.stringify( rows ))
@@ -89,6 +89,7 @@ db.write('persons', `2, "Spring", "Blixted", "Some gata 1", "Höteborg"`)
 db.read('persons', 'LastName')
 db.delete('persons', 'LastName', 'Spring')
 db.read('persons', 'LastName')
-db.update ('persons',`LastName = Spring2`, `LastName = Spring` )
-db.describe('persons')
+db.update ('persons',`City`, 'SmutsSmuts', `LastName`, `Bengan` )
+db.read('persons', '*')
+//db.describe('persons')
 db.closeConnection()
