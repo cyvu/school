@@ -30,29 +30,34 @@ class Database
     })
   }
 
+  /* TODO: clean on prod */
   read(table, field) {
     this.connection.query(`SELECT ${field} FROM ${table}`, function (err, rows, fields) {
       if (err) throw err
       if (rows) {
-        process.stdout.write(JSON.stringify( rows ))
+        process.stdout.write("".concat("\nDatabase.\x1B[3;34m" , "read", "\x1B[0;22m (", field, "):\n", JSON.stringify( rows, null, 2)))
       }
     })
   }
 
+  /* TODO: clean on prod */
   write(table, values) {
     this.connection.query(`INSERT INTO ${table} VALUES (${values})`, function (err, rows, fields) {
       if (err) throw err
       if (rows) {
-        process.stdout.write(JSON.stringify( rows ))
+        if (rows.affectedRows === 1)
+          process.stdout.write("".concat("\nDatabase.\x1B[3;35m", "write", "\x1B[0;2m (", "\"", values, "\") into \x1B[7;24m ", table, " \x1B[27m" ))
       }
     })
   }
   
+  /* TODO: clean on prod */
   delete(table, field, value){
     this.connection.query(`DELETE FROM ${table} WHERE ${field}= "${value}"`, function (err, rows, fields) {
       if (err) throw err
       if (rows) {
-        process.stdout.write(JSON.stringify( rows ))
+          if (rows.affectedRows === 1)
+          process.stdout.write("".concat("\nDatabase.\x1B[3;31m" , "delete", "\x1B[0;2m (", field, "): \"", value, "\" successfully deleted"))
       }
     }) 
   }
