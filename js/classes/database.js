@@ -30,12 +30,23 @@ class Database
     })
   }
 
+  describe(table) {
+    this.connection.query(`DESCRIBE ${table}`, (err, rows, fields) => {
+      process.stdout.write("".concat(
+        "\nDatabase.\x1B[3;32m", 
+        "describe",
+        "\x1B[0;22m (", table, "):\n",
+        JSON.stringify( rows, null, 2))
+      )
+    })
+  }
+
   /* TODO: clean on prod */
   read(table, field) {
     this.connection.query(`SELECT ${field} FROM ${table}`, function (err, rows, fields) {
       if (err) throw err
       if (rows) {
-        process.stdout.write("".concat("\nDatabase.\x1B[3;34m" , "read", "\x1B[0;22m (", field, "):\n", JSON.stringify( rows, null, 2)))
+        process.stdout.write("".concat("\nDatabase.\x1B[3;34m", "read", "\x1B[0;22m (", field, "):\n", JSON.stringify( rows, null, 2)))
       }
     })
   }
@@ -79,4 +90,5 @@ db.read('persons', 'LastName')
 db.delete('persons', 'LastName', 'Spring')
 db.read('persons', 'LastName')
 db.update ('persons',`LastName = Spring2`, `LastName = Spring` )
+db.describe('persons')
 db.closeConnection()
