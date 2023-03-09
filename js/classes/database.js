@@ -57,7 +57,7 @@ class Database
       if (err) throw err
       if (rows) {
           if (rows.affectedRows === 1)
-          process.stdout.write("".concat("\nDatabase.\x1B[3;31m" , "delete", "\x1B[0;2m (", field, "): \"", value, "\" successfully deleted"))
+          process.stdout.write("".concat("\nDatabase.\x1B[3;31m" , "delete", "\x1B[0;2m (", field, "): \x1B[0;31m\"\x1B[9;31m", value, "\x1B[0;2m\x1B[0;31m\"\x1B[0;2m"))
       }
     }) 
   }
