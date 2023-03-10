@@ -47,6 +47,7 @@ But quotation-marks should remain while the inner text is changed ie.
 <span style="background: #f44336; color: white;  border-radius: 4px; padding: 4px 8px;">Warning: don't checkout changes to main; use switch instead</span>
 
 <br />
+<br />
 Common commands are described in the following sections
 
 ## Branches
