@@ -60,7 +60,7 @@ Common commands are described in the following sections
 <br />
 
 ## Download 
-- <code>git switch &lt;local_branch$gt;</code>
+- <code>git switch &lt;local_branch&gt;</code>
 - <code>git pull origin <i>&lt;remote_branch&gt;</i></code> - pulling from <i>main</i> is recommended (unless you know what you're doing)
 
 <br />
