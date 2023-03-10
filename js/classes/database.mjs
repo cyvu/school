@@ -1,7 +1,8 @@
 //import { mysql_user, mysql_pass, mysql_db } from '/env/credentials.js';
-let mysql = require('mysql')
+//let mysql = require('mysql')
+import * as mysql from "mysql"
 
-class Database
+export class Database
 {
   constructor() {
       this.connection = mysql.createConnection({
@@ -72,24 +73,14 @@ class Database
       }
     }) 
   }
-
-  update(table, field, fieldvalue, cityfield, value){
-    this.connection.query(`UPDATE ${table} SET ${field} = "${fieldvalue}"  WHERE ${cityfield}= "${value}"`, function (err, rows, fields) {
-      if (err) throw err
-      if (rows) {
-        process.stdout.write(JSON.stringify( rows ))
-      }
-    }) 
-  }
 }
-
+/*
 const db = new Database()
 db.isConnected()
 db.write('persons', `2, "Spring", "Blixted", "Some gata 1", "Höteborg"`)
 db.read('persons', 'LastName')
 db.delete('persons', 'LastName', 'Spring')
 db.read('persons', 'LastName')
-db.update ('persons',`City`, 'SmutsSmuts', `LastName`, `Bengan` )
-db.read('persons', '*')
-//db.describe('persons')
+db.describe('persons')
 db.closeConnection()
+*/
