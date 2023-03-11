@@ -1,10 +1,15 @@
 # html-css-js-mysql
 
-## New repository name:
+## New repository name: school
 <code>git switch main</code>
+
 <code>git remote remove origin</code>
+
 <code>git remote add origin git@github.com:cyvu/school.git</code>
+
 <code>git fetch --all</code>
+<br />
+<br />
 
 ## Time to learn
 This project is meant to go through the basics of html and css, and later some more advanced techniques
