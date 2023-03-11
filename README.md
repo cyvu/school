@@ -59,6 +59,7 @@ But quotation-marks should remain while the inner text is changed ie.
 <span style="background: #f44336; color: white;  border-radius: 4px; padding: 4px 8px;">Warning: don't checkout changes to main; use switch instead</span>
 
 <br />
+<br />
 Common commands are described in the following sections
 
 ## Branches
@@ -71,7 +72,7 @@ Common commands are described in the following sections
 <br />
 
 ## Download 
-- <code>git switch main</code>
+- <code>git switch &lt;local_branch&gt;</code>
 - <code>git pull origin <i>&lt;remote_branch&gt;</i></code> - pulling from <i>main</i> is recommended (unless you know what you're doing)
 
 <br />
