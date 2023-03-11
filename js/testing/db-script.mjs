@@ -5,8 +5,12 @@ import * as fs from "node:fs"
 
 
 
+/*const file = await fs.open('tables.sql')
 
-
+for await (const line of file.readLines()) {
+  console.log(line)
+}
+*/
 
 const db = new Database()
 
