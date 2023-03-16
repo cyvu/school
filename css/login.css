@@ -14,7 +14,7 @@
   }
   
   /* Set a style for all buttons */
-  button {
+ button {
     background-color: #04AA6D;
     color: white;
     padding: 14px 20px;
@@ -37,7 +37,7 @@
   }
   
   /* Center the avatar image inside this container */
-  .imgcontainer {
+  #login .imgcontainer {
     text-align: center;
     margin: 24px 0 12px 0;
   }
