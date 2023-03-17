@@ -1,57 +1,90 @@
 <!DOCTYPE html>
 <html lang="en-US">
   <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="UTF-8" />
     <link rel="stylesheet" href="/css/admin-panel.css" media="all" />
-    <link rel="stylesheet" href="/css/image_gallery.css" media="screen" />
     <link rel="stylesheet" href="/css/form.css" media="all" />
     <title>Project School: HTML / CSS</title>
   </head>
   <body>
     <section id="admin-panel">
-        <header>
-            <nav>
-              <a href="#usercontrol">User Control</a>
-              <a href="#img">Image</a>
-              <a href="#digitalpet">Digital Pet</a>
-            </nav>
-          </header>
+      <header>
+        <nav>
+          <a href="#usercontrol">User Control</a>
+          <a href="#img">Image</a>
+          <a href="#digitalpet">Digital Pet</a>
+        </nav>
+      </header>
     </section>
 
     <section id="usercontrol">
-        <h1>User Control</h1>
+      <h1>User Control</h1>
 
+      <!-- action page.php is wrong fix or get fixed... -->
+      <form id="form-users" method="get">
+        <label for="search">Search:</label>
+        <input type="search" id="search" name="search" /><br /><br />
+        <button type="submit" name="users" value="Get Users" >Get Users</button>
+        <button type="submit" name="user" value="Get User" >Get User</button>
+      </form>
 
-        <!-- action page.php is wrong fix or get fixed... -->
-        <form action="/action_page.php" method="get">
-            <label for="search">Search:</label>
-            <input type="text" id="search" name="search"><br><br>
-            <input type="submit" value="Get User">
-          </form> 
+      <form action="" method="get">
+        <input type="submit" value="Add User" /> <br />
+        <input type="submit" value="Update User" /><br />
+        <input type="submit" value="Destroy User" />
+      </form>
 
-
-          <form action="/action_page.php" method="get">
-            <input type="submit" value="Add User"> <br>
-            <input type="submit" value="Update User"><br>
-            <input type="submit" value="Destroy User">
-          </form> 
-
-          
+      <h3>Result:</h3>
+      <pre id="result"></pre>
     </section>
 
     <section id="image">
-        <h1>Image</h1>
+      <h1>Image</h1>
     </section>
 
     <section id="digitalpet">
-        <h1>Digital Pet</h1>
+      <h1>Digital Pet</h1>
     </section>
 
+    <script defer>
+      const form = document.querySelector("#form-users");
+      const button = document.getElementsByName("users")[0];
+      const textarea = document.querySelector("#result");
 
+      form.addEventListener(
+        "click",
+        (event) => {
+          event.preventDefault();
 
+          const result = textarea.addEventListener(
+            "click",
+            (event) => {
+              fetch("http://localhost:8000/users", {
+                method: "get",
+                headers: "application/json",
+                body: null,
+              })
+                .then((response) => {
+                  if (!response.ok) {
+                    throw new Error(`HTTP error: ${response.status}`);
+                  }
+                  console.log("response");
+                  textarea = response.json();
+                  textarea.innerHTML = data;
+                  return response.json();
+                })
+                .catch((error) => {
+                  console.log("error");
+                  textarea.innerHTML = `Error: ${error}`;
+                });
+              event.preventDefault();
+            },
+            false
+          );
+        },
+        false
+      );
+    </script>
   </body>
-  <script defer src="/js/image_gallery.js"></script>
-  <script defer src="/js/form/todo-list.js"></script>
-  <script type="module" defer src="/js/mysql.js"></script>
 </html>
