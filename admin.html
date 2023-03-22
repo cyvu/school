@@ -58,24 +58,25 @@
 
       async function fetchUsers() {
         try {
-          const data = await fetch("http://localhost:8000/users", {
-            method: "get",
-            headers: "application/json",
-            body: null,
-            credentials: "include",
+          await fetch("http://localhost:8000/user/1", {
+            method: "GET", // GET, POST, PUT, DELETE
+            headers: { "Content-Type": "application/json" },
+            cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
+            credentials: "include", // include, *same-origin, omit
+            mode: "no-cors", // no-cors, *cors, same-origin
+            redirect: "follow", // manual, follow, error
+            body: null, //JSON.stringify(data), // body data type must match "Content-Type" header
           })
-          .then(res => {
-            res.json()
-            console.log("Result: " + res)
-          })
-          .then(data => {
-            res.json()
-            console.log("Result: " + res)
-          })
-          .catch(error => {
-            console.error("Error: " + error)
-          });
-
+            .then((res) => {
+              console.log(res.json())
+              if (!res.ok) {
+                return Promise.reject(res)
+              }
+              console.table("Result: ", res);
+            })
+            .catch((error) => {
+              console.error(error);
+            });
         } catch (error) {
           console.error("Fetch error: " + error);
         }
