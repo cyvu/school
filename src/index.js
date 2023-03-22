@@ -94,6 +94,17 @@ const modules = {
       insertAt: "beforeend",
     },
   },
+
+  digital_pet: {
+    path: "/src/template/module/digital_pet.htm",
+    css: "/src/css/digital_pet.htm",
+    //script: "/src/js/form/example.js",
+    target: document.getElementsByTagName("main"),
+    insertAt: "beforeend",
+  },
+
+
+
 };
 
 // Compile everything
