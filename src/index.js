@@ -3,13 +3,13 @@
 /* Component: name: source */
 const components = {
   todo: {
-    path: "/src/template/todo.htm",
+    path: "/src/template/module/todo.htm",
     script: "/src/js/form/todo-list.js",
     target: document.getElementsByTagName("main"),
     insertAt: "beforeend",
   },
   gallery: {
-    path: "/src/template/gallery.htm",
+    path: "/src/template/module/gallery.htm",
     script: "/src/js/gallery.js",
     target: document.getElementsByTagName("main"),
     insertAt: "beforeend",
