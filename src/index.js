@@ -2,6 +2,18 @@
 
 /* Component: name: source */
 const components = {
+  example: {
+    // Create path file (if needed)
+    path: "/src/template/module/admin.htm",
+    // Create css file (if needed)
+    css: "/src/css/example.css",
+    // Create script file (if needed)
+    script: "/src/js/form/example.js",
+    // Target the element you want to inject the code into
+    target: document.getElementsByTagName("main"),
+    // Position to inject at ("beginstart", "beginend", "afterstart", "afterend")
+    insertAt: "afterbegin",
+  },
   todo: {
     path: "/src/template/module/todo.htm",
     script: "/src/js/form/todo-list.js",
