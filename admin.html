@@ -50,74 +50,36 @@
       <h3>Result:</h3>
       <pre id="result"></pre>
     </section>
-
     <script defer>
-      const form = document.querySelector("#form-users");
-      const getUsers = document.getElementsByName("getUsers")[0];
-      const output = document.querySelector("#result");
+      getUsers("http://localhost:8000/users");
 
-      async function fetchUsers() {
-        try {
-          await fetch("http://localhost:8000/user/1", {
-            method: "GET", // GET, POST, PUT, DELETE
-            headers: { "Content-Type": "application/json" },
-            cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
-            credentials: "include", // include, *same-origin, omit
-            mode: "no-cors", // no-cors, *cors, same-origin
-            redirect: "follow", // manual, follow, error
-            body: null, //JSON.stringify(data), // body data type must match "Content-Type" header
+      async function getUsers(path) {
+        await fetch(path, {
+          method: "get",
+          headers: { "Content-Type": "application/json" },
+          mode: "cors", // no-cors, *cors, same-origin
+          credentials: "same-origin", // include, *same-origin, omit
+        })
+          .then((response) => {
+            console.log(response);
+            if (!response.ok) {
+              throw new Error(
+                `Network response was not ok: ${response.status} ${response.statusText}`
+              );
+            }
+            return response.json();
           })
-            .then((res) => {
-              console.log(res.json())
-              if (!res.ok) {
-                return Promise.reject(res)
-              }
-              console.table("Result: ", res);
-            })
-            .catch((error) => {
-              console.error(error);
-            });
-        } catch (error) {
-          console.error("Fetch error: " + error);
-        }
+          .then((data) => {
+            console.log("Data received:", data);
+          })
+          .catch((error) => {
+            console.error("There was a problem with the fetch request:", error);
+          });
       }
-      fetchUsers();
+    </script>
+    <script async src="js/classes/Data.js">
+      const data = new Data()
 
-      /*
-      form.addEventListener(
-        "click",
-        (event) => {
-          event.preventDefault();
-
-          const result = getUsers.addEventListener(
-            "click",
-            (event) => {
-              fetch("http://localhost:8000/users", {
-                method: "get",
-                headers: "application/json",
-                body: null,
-              })
-                .then((response) => {
-                  if (!response.ok) {
-                    throw new Error(`HTTP error: ${response.status}`);
-                  }
-                  console.log("response");
-                  output = response.json();
-                  output.innerHTML = data;
-                  return response.json();
-                })
-                .catch((error) => {
-                  console.log("error");
-                  textarea.innerHTML = `Error: ${error}`;
-                });
-              event.preventDefault();
-            },
-            false
-          );
-        },
-        false
-      );
-      */
     </script>
   </body>
 </html>
