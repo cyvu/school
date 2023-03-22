@@ -1,0 +1,11 @@
+#example {
+  background: transparent;
+}
+
+#example article {
+  color: white;
+}
+
+#example article>form {
+  color: white;
+}
