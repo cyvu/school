@@ -19,19 +19,31 @@
     </section>
 
     <section id="usercontrol">
-      <h1>User Control</h1>
+      <h1>Administrate Users</h1>
 
       <!-- action page.php is wrong fix or get fixed... -->
       <form id="form-users" method="get">
         <label for="search">Search:</label>
         <input type="search" id="search" name="search" /><br /><br />
-        <button type="submit" name="users" value="Get Users" >Get Users</button>
-        <button type="submit" name="user" value="Get User" >Get User</button>
+        <button type="submit" name="getUsers" value="Get Users">
+          Get Users
+        </button>
+        <button type="submit" name="getUser" value="Get User">Get User</button>
       </form>
 
+      <br /><br />
+
       <form action="" method="get">
-        <input type="submit" value="Add User" /> <br />
-        <input type="submit" value="Update User" /><br />
+        <label for="fetchedUsers"
+          >Fetch users and add interactions for each user.</label
+        >
+        <ul name="fetchedUsers">
+          <li>Firstname</li>
+          <li>Lastname</li>
+          <li>Email</li>
+        </ul>
+        <input type="submit" value="Add User" />
+        <input type="submit" value="Update User" />
         <input type="submit" value="Destroy User" />
       </form>
 
@@ -39,25 +51,44 @@
       <pre id="result"></pre>
     </section>
 
-    <section id="image">
-      <h1>Image</h1>
-    </section>
-
-    <section id="digitalpet">
-      <h1>Digital Pet</h1>
-    </section>
-
     <script defer>
       const form = document.querySelector("#form-users");
-      const button = document.getElementsByName("users")[0];
-      const textarea = document.querySelector("#result");
+      const getUsers = document.getElementsByName("getUsers")[0];
+      const output = document.querySelector("#result");
 
+      async function fetchUsers() {
+        try {
+          const data = await fetch("http://localhost:8000/users", {
+            method: "get",
+            headers: "application/json",
+            body: null,
+            credentials: "include",
+          })
+          .then(res => {
+            res.json()
+            console.log("Result: " + res)
+          })
+          .then(data => {
+            res.json()
+            console.log("Result: " + res)
+          })
+          .catch(error => {
+            console.error("Error: " + error)
+          });
+
+        } catch (error) {
+          console.error("Fetch error: " + error);
+        }
+      }
+      fetchUsers();
+
+      /*
       form.addEventListener(
         "click",
         (event) => {
           event.preventDefault();
 
-          const result = textarea.addEventListener(
+          const result = getUsers.addEventListener(
             "click",
             (event) => {
               fetch("http://localhost:8000/users", {
@@ -70,8 +101,8 @@
                     throw new Error(`HTTP error: ${response.status}`);
                   }
                   console.log("response");
-                  textarea = response.json();
-                  textarea.innerHTML = data;
+                  output = response.json();
+                  output.innerHTML = data;
                   return response.json();
                 })
                 .catch((error) => {
@@ -85,6 +116,7 @@
         },
         false
       );
+      */
     </script>
   </body>
 </html>
