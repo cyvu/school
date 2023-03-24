@@ -1,22 +1,38 @@
 "use strict";
 
-/* Component: name: source */
+/**
+ * Add a module/component by listing it here
+ * * Create an issue if you need other files to be available
+ * TODO: read everything in a modules folder automatically
+ * 
+ * @var components.example   Example lists every option available for the module; copy this
+ */
 const components = {
+  /**
+   * This module is an example which should be copied and used for your own module
+   * 
+   * @var base      Relative path to this modules root
+   * @var path      Main file
+   * @var img       Img path (optional)
+   * @var css       Style file (optional)
+   * @var script    Javascript file(s) (optional) (multiple not implemented atm)
+   * @var target    Target the element you want this module attach to
+   * @var insertAt  Where this module should reside, in relation to the target
+   */
   example: {
-    // Create path file (if needed)
-    path: "/src/template/module/admin.htm",
-    // Create css file (if needed)
-    css: "/src/css/example.css",
-    // Create script file (if needed)
-    script: "/src/js/form/example.js",
-    // Target the element you want to inject the code into
+    base: "/src/template/module/example/",
+    path: "example.htm",
+    img: "img/",
+    css: "css/example.css",
+    script: "js/example.js",
     target: document.getElementsByTagName("main"),
-    // Position to inject at ("beginstart", "beginend", "afterstart", "afterend")
     insertAt: "afterbegin",
   },
   todo: {
-    path: "/src/template/module/todo.htm",
-    script: "/src/js/form/todo-list.js",
+    base: "/src/template/module/todo/",
+    path: "todo.htm",
+    css: "css/todo-list.js",
+    script: "js/todo-list.js",
     target: document.getElementsByTagName("main"),
     insertAt: "beforeend",
   },
@@ -59,29 +75,40 @@ const components = {
 // Compile everything and run
 compileComponents();
 
-/* Add components */
+/**
+ * Compiles the site
+ * @function addBaseComponents() Constructs the base immediately and synchronously
+ * @function addComponents() Constructs the additional modules and implements them asynchronously, sequentially
+ */
 async function compileComponents() {
-  // Build the base first
-  await addComponent({
+  addBaseComponents()
+  addComponents()
+}
+
+async function addBaseComponents() {
+  await addHTML({
     path: components.base.navigation.path,
     target: components.base.navigation.target,
     insertAt: components.base.navigation.insertAt,
   });
-  await addComponent({
+  await addHTML({
     path: components.base.main.path,
     target: components.base.main.target,
     insertAt: components.base.main.insertAt,
   });
-  await addComponent({
+  await addHTML({
     path: components.base.footer.path,
     target: components.base.footer.target,
     insertAt: components.base.footer.insertAt,
   });
+}
 
-  // Add the rest
+/* Site structure functions */
+async function addComponents() {
   for (const name of Object.keys(components)) {
+    if (name === "example") continue;
     if (name === "base") continue;
-    await addComponent({
+    await addHTML({
       path: components[name].path,
       script: components[name].script,
       target: components[name].target,
@@ -90,14 +117,8 @@ async function compileComponents() {
   }
 }
 
-/* Site structure functions */
-async function addComponent({ path, script, target, insertAt }) {
-  await addHTML({ path, script, target, insertAt });
-}
-
 /**
- * addHTML
- * @attach set a target to attach components to
+ * @insertAt set a target to attach components to
  */
 async function addHTML({ path, script, target, insertAt }) {
   const resp = await fetch(path);
