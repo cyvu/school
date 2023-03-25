@@ -31,8 +31,10 @@ const modules = {
     },
   },
 
-  // Insert modules below this line
-  
+  /*
+  ! Insert modules below this line
+  */
+
   todo: {
     path: "/src/components/modules/todo/",
     file: "todo.htm",
@@ -66,7 +68,9 @@ const modules = {
     },
   },
 
-  // Insert modules above this line
+  /*
+  ! Insert modules above this line
+  */
 
   /* Base modules - do not touch */
   base: {
@@ -100,7 +104,7 @@ compileModules();
  * @function addModules() Constructs the additional modules and implements them asynchronously, sequentially
  */
 async function compileModules() {
-  await addBaseModules();  // Takes priority over the other modules
+  await addBaseModules(); // Takes priority over the other modules
   await addModules();
 }
 
