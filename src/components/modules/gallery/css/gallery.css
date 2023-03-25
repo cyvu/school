@@ -141,6 +141,11 @@
   background-color: #717171;
 }
 
+#img section {
+  display: flex;
+  place-content: center;
+}
+
 /* Animations */
 .fade {
   animation-name: fade;

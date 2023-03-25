@@ -1,44 +1,58 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  /* background:rgba(59, 111, 141, 0.186) */
 }
 
+:root {
+  --color-background-main: rgba(188, 189, 200, 0.98);
+  --color-background-base: #141414;
+  --color-text-main: rgba(171, 146, 135, 0.95);
+  --color-text-accent: rgba(171, 146, 135, 0.95);
+  --color-text-link: rgb(65, 65, 171);
+  --color-text-link-hover: rgb(214, 214, 221);
+  --color-text-link-active: rgb(65, 65, 171);
+  --color-text-link-selected: rgb(65, 65, 171);
+}
+
+html,
+body {
+  height: 100%;
+}
 html {
   scroll-behavior: smooth;
-  background-color: rgb(77, 77, 77);
   background-image: url("/src/img/bg12.jpg");
   background-size: cover;
-  height: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
 }
 body {
   display: grid;
   grid-template-areas:
-  "header header"
-  "aside main"
-  "footer footer";
+    "header"
+    "main"
+    "footer";
   grid-template-rows: auto 1fr auto;
-  grid-template-columns: 4em auto;
+  grid-template-columns: auto;
   font-family: Roboto, sans-serif;
-  min-height: 100%;
 }
-
 
 header {
   grid-area: header;
+  background-color: var(--color-background-base);
 }
 header > nav {
   display: grid;
   grid-template-columns: repeat(3, auto);
-  grid-template-rows: auto;
-  justify-content: center;
-  align-content: center;
+  place-content: center;
   padding: 10px;
 }
 header > nav > a {
-  background-color: rgb(188, 189, 200);
+  background-color: var(--color-background-main);
   border-radius: 33px;
   margin: 1em;
   padding: 1em 2em;
@@ -46,58 +60,58 @@ header > nav > a {
   text-align: center;
 }
 
-
 main {
   grid-area: main;
-  height: 100%;
+  place-self: center;
+  width: 100%;
 }
-
 
 footer {
   grid-area: footer;
   display: flex;
-  flex-grow: 0;
-  flex-shrink: 0;
   justify-content: center;
-  position: relative;
-  height: 100%;
+  place-self: center;
+  background-color: var(--color-background-base);
   width: 100%;
-  margin-top: 3em;
-  padding: 3em;
-  background-color: #14151846;
-  background-image: linear-gradient(180deg, #1a1a1a28, #00000000);
-  color: #c8c8c8;
-  min-height: 100px;
-  background-position: cover;
+  padding: 40px;
 }
 footer > address {
-  background: #333;
-  padding: 2em;
-  border-radius: 4px;
-  background-image: linear-gradient(145deg, #bdb388, #d47e7e);
-  color: rgb(44,44,44,44);
-  filter: drop-shadow(0 -20px 1rem rgb(70, 65, 65, 1));
+  background: var(--color-background-base);
+  margin: 1rem;
+  padding: 2rem;
+  width: min(240px, 30vw);
+  border-radius: 10px;
+  background-image: linear-gradient(165deg, #89898930, #bababa, #59595947);
+  color: rgb(44, 44, 44, 44);
+  filter: drop-shadow(0 4px 1rem rgb(40, 38, 38));
+  transition: rotate 75ms ease-in, scale 100ms ease-in;
+}
+footer > address:hover {
+  rotate: 2deg;
+  scale: 1.25;
 }
 footer > address > a {
-  color:rgb(22,22,22);
+  color: var(--color-text-link);
   text-decoration: none;
 }
 footer > address > a:hover {
-  color:rgb( 200,200,200);
+  color: var(--color-text-link-hover);
   background: #333;
   text-decoration: underline;
 }
-article {
-  background-color: rgb(188, 189, 200);
-  border-radius: 33px;
-  margin: 30px;
-  padding: 40px;
+section {
+  background-color: var(--color-background-base);
+  width: 100%;
+  margin: 10em 0;
+  padding: 4rem 0;
 }
-article#img section {
-  display: flex;
-  place-content: center;
+article {
+  background-color: transparent;
+  border-radius: 33px;
+  padding: 4rem 0;
 }
 
-h1, h2, h3, h4, h5, h6 {
+:is(h1, h2, h3, h4, h5, h6) {
   text-align: center;
+  color: var(--color-text-main)
 }
