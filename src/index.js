@@ -142,7 +142,7 @@ async function addHTML({ path, file, target, insertAt, optional }) {
     (insertAt === "afterend")
   ) {
     // Add css to head
-    if (optional && optional.css && typeof optional.css !== "undefined") {
+    if (optional && optional.css && typeof optional.css !== undefined) {
       const head = document.getElementsByTagName("head")[0];
       const element = document.createElement("link");
       element.setAttribute("rel", "stylesheet");
@@ -157,7 +157,7 @@ async function addHTML({ path, file, target, insertAt, optional }) {
      * TODO: place before body end
      * TODO2: send to script handler
      */
-    if (optional && optional.script && typeof optional.script !== "undefined") {
+    if (optional && optional.script && typeof optional.script !== undefined) {
       const element = document.createElement("script");
       element.setAttribute("src", path + optional.script);
       element.setAttribute("defer", true);
