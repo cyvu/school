@@ -212,7 +212,6 @@ async function addHTML({ path, file, target, insertAt, optional }) {
       element.setAttribute("defer", true);
       document.body.appendChild(element);
     }
-
     // Add module to site
     target[0].insertAdjacentHTML(insertAt, html);
   }
