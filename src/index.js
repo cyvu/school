@@ -52,6 +52,9 @@ const modules = {
       script: "js/script.js",
     },
   },
+
+  // Insert modules below this line
+  
   todo: {
     path: "/src/components/modules/todo/",
     file: "index.htm",
@@ -74,6 +77,20 @@ const modules = {
       script: "js/script.js",
     },
   },
+  digital_pet: {
+    path: "/src/components/modules/digital-pet/",
+    file: "digital_pet.htm",
+    target: document.getElementsByTagName("main"),
+    insertAt: "beforeend",
+    optional: {
+      img: "img/",
+      css: "css/digital_pet.css",
+    },
+  },
+
+  // Insert modules above this line
+
+  /* Base modules - do not touch */
   base: {
     navigation: {
       path: "/src/components/base/",
@@ -94,17 +111,6 @@ const modules = {
       insertAt: "beforeend",
     },
   },
-
-  digital_pet: {
-    path: "/src/template/module/digital_pet.htm",
-    css: "/src/css/digital_pet.css",
-    //script: "/src/js/form/example.js",
-    target: document.getElementsByTagName("main"),
-    insertAt: "beforeend",
-  },
-
-
-
 };
 
 // Compile everything
