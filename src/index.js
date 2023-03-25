@@ -53,8 +53,10 @@ const modules = {
     },
   },
 
-  // Insert modules below this line
-  
+  /*
+  ! Insert modules below this line
+  */
+
   todo: {
     path: "/src/components/modules/todo/",
     file: "index.htm",
@@ -88,7 +90,9 @@ const modules = {
     },
   },
 
-  // Insert modules above this line
+  /*
+  ! Insert modules above this line
+  */
 
   /* Base modules - do not touch */
   base: {
