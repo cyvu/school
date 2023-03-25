@@ -35,15 +35,15 @@ async function addTodoListItem(index) {
   /* Labels */
   const label_text = document.createElement("label");
   label_text.setAttribute("for", "text" + index);
-  label_text.innerText = "Item" + index;
+  label_text.innerText = "Item " + index;
 
   const label_date_add = document.createElement("label");
   label_date_add.setAttribute("for", "date_add" + index);
-  label_date_add.innerText = "Date added: ";
+  label_date_add.innerText = "";
 
   const label_date_check = document.createElement("label");
   label_date_check.setAttribute("for", "date_check" + index);
-  label_date_check.innerText = "Date checked: ";
+  label_date_check.innerText = "";
 
   /* Construct the form item */
   const target = document.querySelector("#form-todo");

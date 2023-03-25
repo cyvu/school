@@ -1,8 +1,10 @@
-#form-todo {
+#todo article {
   margin: 0 auto;
+  border-radius: 33px;
+  background: var(--color-background-main);
 }
 
-#form-todo > ul {
+#todo #form-todo > ul {
   display: flex;
   align-self: center;
   align-items: flex-start;
@@ -12,28 +14,30 @@
   flex-wrap: nowrap;
   list-style: none;
   margin: 0 auto;
-  padding: 1px;
-  max-width: 1000px;
+  padding: 10px;
+  max-width: 800px;
 }
 
-#form-todo > ul > li {
+#todo #form-todo > ul > li {
   justify-content: stretch;
   align-self: stretch;
-  background: #acabaa;
-  padding: 1em 2em;
-  border-radius: 33px;
+  padding: 1px 4px;
   width: 100%;
 }
 
-#form-todo > ul > li:first-child {width: auto;}
-#form-todo > ul > li:nth-child(2) {width:100%;}
-#form-todo > ul > li:nth-child(3) {width:300px;}
-#form-todo > ul > li:nth-child(4) {width:300px;}
+#todo #form-todo > ul > li:first-child {width: auto;}
+#todo #form-todo > ul > li:nth-child(2) {width:100%;}
+#todo #form-todo > ul > li:nth-child(3) {width:auto}
+#todo #form-todo > ul > li:nth-child(4) {width:auto}
 
-#form-todo > ul > li > input[type="text"] {
+#todo #form-todo > ul > li > input {
   margin: 0 1em;
   padding: 0 1em;
-  height: 100%;
-  width: 80%;
+  height: 2.4em;
+  width: auto;
   border-radius: 33px;
+  border: none;
+}
+#todo #form-todo > ul > li > input[type="text"] {
+  width: 80%;
 }
