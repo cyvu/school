@@ -20,7 +20,7 @@ const components = {
    * @var optional.script Javascript file(s) (optional) (multiple not implemented atm)
    */
   example: {
-    path: "/src/template/module/example/",
+    path: "/src/components/modules/example/",
     file: "example.htm",
     target: document.getElementsByTagName("body"),
     insertAt: "afterbegin",
@@ -31,7 +31,7 @@ const components = {
     },
   },
   todo: {
-    path: "/src/template/module/todo/",
+    path: "/src/components/modules/todo/",
     file: "todo.htm",
     target: document.getElementsByTagName("main"),
     insertAt: "beforeend",
@@ -42,7 +42,7 @@ const components = {
     },
   },
   gallery: {
-    path: "/src/template/module/gallery/",
+    path: "/src/components/modules/gallery/",
     file: "gallery.htm",
     target: document.getElementsByTagName("main"),
     insertAt: "beforeend",
@@ -54,19 +54,19 @@ const components = {
   },
   base: {
     navigation: {
-      path: "/src/template/base/",
+      path: "/src/components/base/",
       file: "navigation.htm",
       target: document.getElementsByTagName("body"),
       insertAt: "beforeend",
     },
     main: {
-      path: "/src/template/base/",
+      path: "/src/components/base/",
       file: "main.htm",
       target: document.getElementsByTagName("body"),
       insertAt: "beforeend",
     },
     footer: {
-      path: "/src/template/base/",
+      path: "/src/components/base/",
       file: "footer.htm",
       target: document.getElementsByTagName("body"),
       insertAt: "beforeend",
@@ -153,9 +153,8 @@ async function addHTML({ path, file, target, insertAt, optional }) {
     (insertAt === "beforeend") |
     (insertAt === "afterend")
   ) {
-
     // Add css to head
-    if (optional && optional.css && typeof optional.css !== "undefined" ) {
+    if (optional && optional.css && typeof optional.css !== "undefined") {
       const head = document.getElementsByTagName("head")[0];
       const element = document.createElement("link");
       element.setAttribute("rel", "stylesheet");
@@ -170,7 +169,7 @@ async function addHTML({ path, file, target, insertAt, optional }) {
      * TODO: place before body end
      * TODO2: send to script handler
      */
-    if (optional && optional.script && typeof optional.script !== "undefined" ) {
+    if (optional && optional.script && typeof optional.script !== "undefined") {
       const element = document.createElement("script");
       element.setAttribute("src", path + optional.script);
       element.setAttribute("defer", true);
