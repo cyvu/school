@@ -5,9 +5,9 @@
  * * Create an issue if you need other files to be available
  * TODO: read everything in a modules folder automatically
  *
- * @var components.example   Example lists every option available for the module; copy this
+ * @var modules.example   Example lists every option available for the module; copy this
  */
-const components = {
+const modules = {
   /**
    * This module is an example which should be copied and used for your own module
    *
@@ -74,63 +74,62 @@ const components = {
   },
 };
 
-// Compile everything and run
-// compileComponents();
-compileComponents();
+// Compile everything
+compileModules();
 
 /**
  * Compiles the site
- * @function addBaseComponents() Constructs the base immediately and synchronously
- * @function addComponents() Constructs the additional modules and implements them asynchronously, sequentially
+ * @function addBaseModules() Constructs the base immediately and synchronously
+ * @function addModules() Constructs the additional modules and implements them asynchronously, sequentially
  */
-async function compileComponents() {
-  await addBaseComponents();
-  await addComponents();
+async function compileModules() {
+  await addBaseModules();  // Takes priority over the other modules
+  await addModules();
 }
 
-async function addBaseComponents() {
+async function addBaseModules() {
   await addHTML({
-    path: components.base.navigation.path,
-    file: components.base.navigation.file,
-    target: components.base.navigation.target,
-    insertAt: components.base.navigation.insertAt,
+    path: modules.base.navigation.path,
+    file: modules.base.navigation.file,
+    target: modules.base.navigation.target,
+    insertAt: modules.base.navigation.insertAt,
   });
   await addHTML({
-    path: components.base.main.path,
-    file: components.base.main.file,
-    target: components.base.main.target,
-    insertAt: components.base.main.insertAt,
+    path: modules.base.main.path,
+    file: modules.base.main.file,
+    target: modules.base.main.target,
+    insertAt: modules.base.main.insertAt,
   });
   await addHTML({
-    path: components.base.footer.path,
-    file: components.base.footer.file,
-    target: components.base.footer.target,
-    insertAt: components.base.footer.insertAt,
+    path: modules.base.footer.path,
+    file: modules.base.footer.file,
+    target: modules.base.footer.target,
+    insertAt: modules.base.footer.insertAt,
   });
 }
 
 /* Site structure functions */
-async function addComponents() {
-  for (const name of Object.keys(components)) {
+async function addModules() {
+  for (const name of Object.keys(modules)) {
     if (name === "example") continue;
     if (name === "base") continue;
 
     await addHTML({
-      path: components[name].path,
-      file: components[name].file,
-      target: components[name].target,
-      insertAt: components[name].insertAt,
+      path: modules[name].path,
+      file: modules[name].file,
+      target: modules[name].target,
+      insertAt: modules[name].insertAt,
       optional: {
-        img: components[name].optional.img,
-        css: components[name].optional.css,
-        script: components[name].optional.script,
+        img: modules[name].optional.img,
+        css: modules[name].optional.css,
+        script: modules[name].optional.script,
       },
     });
   }
 }
 
 /**
- * @insertAt set a target to attach components to
+ * @insertAt set a target to attach modules to
  */
 async function addHTML({ path, file, target, insertAt, optional }) {
   const resp = await fetch(path + file);
