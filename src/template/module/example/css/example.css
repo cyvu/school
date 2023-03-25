@@ -1,11 +1,13 @@
 #example {
   background: transparent;
+  display: none;
 }
 
 #example article {
   color: white;
+  background: black;
 }
 
-#example article>form {
-  color: white;
+#example article>h1{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
