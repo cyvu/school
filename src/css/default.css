@@ -191,5 +191,22 @@ form input {
   border: none;
 }
 form input[type="text"]:is(:active, :hover, :focus) {
-  background-color: #33333333;
+  background-color: var(--color-background-main);
+}
+
+
+button {
+  margin: 0 1em;
+  padding: 0 1em;
+  height: 2.4em;
+  width: auto;
+  border-radius: 33px;
+  border: none;
+}
+button:is(:active, :hover, :focus) {
+  background-color: var(--color-background-main);
+}
+
+.stretch-center {
+  align-items: center;
 }

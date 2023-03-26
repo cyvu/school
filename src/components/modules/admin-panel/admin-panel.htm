@@ -2,28 +2,42 @@
   <article>
     <h1>Administrate Users</h1>
 
-    <form id="user-search" method="get">
+    <form id="user-search">
       <label for="search">Search:</label>
       <input type="search" id="search" name="search" />
-      <button type="submit" name="getUsers" value="Get Users">Get Users</button>
-      <button type="submit" name="getUser" value="Get User">Get User</button>
+      <button type="button" name="getUsers">Search</button>
     </form>
 
-    <form id="user-handle" method="get">
+    <form id="user-handle" class="stretch-center">
+      <button type="button" name="getUsers">Get Users</button>
+      <button type="button" name="getUser">Get User</button>
+      <button type="button" name="postUser">Add User</button>
+      <button type="button" name="updateUser">Update User</button>
+    </form>
+
+    <form id="user-modifier">
       <label for="id">Id </label>
-      <input type="text" id="id" name="id" />
+      <input type="text" id="id" name="id"  value="1"/>
       <label for="firstname">Firstname</label
-      ><input type="text" id="firstname" name="firstname" />
+      ><input type="text" id="firstname" name="firstname" value="fn"/>
       <label for="lastname">Lastname</label
-      ><input type="text" id="lastname" name="lastname" />
+      ><input type="text" id="lastname" name="lastname"  value="ln"/>
       <label for="email">Email</label
-      ><input type="text" id="email" name="email" />
-
-      <input type="submit" value="Add User" />
-      <input type="submit" value="Update User" />
+      ><input type="text" id="email" name="email"  value="em"/>
     </form>
 
-    <h3>Result:</h3>
-    <pre id="user_list"></pre>
+    <pre id="alert"></pre>
+
+    <section id="user_list">
+      <h3>Result:</h3>
+      <ul>
+        <li>Id</li>
+        <li>Firstname</li>
+        <li>Lastname</li>
+        <li>Email</li>
+        <li>Last logged in</li>
+        <li>Date created</li>
+      </ul>
+    </section>
   </article>
 </section>

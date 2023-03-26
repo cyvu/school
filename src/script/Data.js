@@ -7,8 +7,7 @@ class Data {
   // #content_type;
 
   constructor(path) {
-    console.log("Data class loaded");
-    this.path = path
+    this.path = path;
   }
 
   /**
@@ -27,16 +26,13 @@ class Data {
             `Network response was not ok: ${response.status} ${response.statusText}`
           );
         }
-        console.table("Response received");
         return await response.json();
       })
       .then(async (data) => {
-        console.table("Data received");
         return await data;
       })
       .catch(async (error) => {
-        console.error("There was a problem with the fetch request:", error);
-        return await error
+        return await error;
       });
   }
 
@@ -44,12 +40,65 @@ class Data {
    * Post data using fetch
    * @path path to data
    */
-  post(path) {}
+  async post(args) {
+    return await fetch(this.path, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      mode: "cors",
+      credentials: "same-origin",
+      body: JSON.stringify({
+        firstname: args.firstname,
+        lastname: args.lastname,
+        email: args.email,
+      }),
+    })
+      .then(async (response) => {
+        if (!response.ok) {
+          throw new Error(
+            `Network response was not ok: ${response.status} ${response.statusText}`
+          );
+        }
+        return await response.json();
+      })
+      .then(async (data) => {
+        return await data;
+      })
+      .catch(async (error) => {
+        return await error;
+      });
+  }
 
   /**
    * Update data with a post request using fetch
    */
-  put(path) {}
+  async put(args) {
+    return await fetch(this.path, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      mode: "cors",
+      credentials: "same-origin",
+      body: JSON.stringify({
+        id: args.id,
+        firstname: args.firstname,
+        lastname: args.lastname,
+        email: args.email,
+      }),
+    })
+      .then(async (response) => {
+        if (!response.ok) {
+          throw new Error(
+            `Network response was not ok: ${response.status} ${response.statusText}`
+          );
+        }
+        return await response.json();
+      })
+      .then(async (data) => {
+        return await data;
+      })
+      .catch(async (error) => {
+        return await error;
+      });
+  }
 
   /**
    * Delete data with a post request using fetch

@@ -6,18 +6,21 @@
   background-color: var(--color-background-accent);
   border-radius: 33px;
 }
-#admin-panel form#user-search input[type="search"] {
+#admin-panel form:is(#user-search) input[type="search"] {
   width: 100%;
 }
 #admin-panel form :is(ul, label) {
   color: #ebefef;
 }
-#admin-panel form#user-handle {
+#admin-panel form:is(#user-modifier) {
   flex-wrap: wrap;
   gap: 1em;
 }
-#admin-panel form#user-handle > :is(label, input) {
+#admin-panel form:is(#user-modifier) > :is(label, input) {
   flex: 50%;
+}
+#admin-panel form:is(#user-modifier) input[type="submit"]:first-child {
+  margin-top: 2em;
 }
 #admin-panel ul {
   display: flex;
