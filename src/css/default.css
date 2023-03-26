@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400&display=swap");
 
 * {
   margin: 0;
@@ -8,16 +8,21 @@
 }
 
 :root {
+  --site-size-width: 800px;
+
   --color-background-main: rgba(188, 189, 200, 0.98);
-  --color-background-base: #141414;
-  --color-text-main: rgba(171, 146, 135, 0.95);
-  --color-text-accent: rgba(171, 146, 135, 0.95);
-  --color-text-link: rgb(65, 65, 171);
-  --color-text-link-hover: rgb(214, 214, 221);
-  --color-text-link-active: rgb(65, 65, 171);
-  --color-text-link-selected: rgb(65, 65, 171);
+  --color-background-base: #181616fa;
+  --color-background-accent: hsla(18, 16%, 16%, 0.988);
+  --color-text-main: hsla(18, 18%, 60%, 0.95);
+  --color-text-accent: hsla(25, 80%, 84%, 0.65);
+  --color-text-base: rgb(29, 16, 10);
+  --color-text-link: rgb(0, 0, 0);
+  --color-text-link-hover: rgb(35, 35, 35);
+  --color-text-link-active: rgb(72, 72, 72);
+  --color-text-link-selected: rgb(122, 122, 122);
 }
 
+/* Default settings - main content */
 html,
 body {
   height: 100%;
@@ -29,6 +34,8 @@ html {
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
+  perspective: 2em;
+  transform-style: preserve-3d;
 }
 body {
   display: grid;
@@ -38,7 +45,7 @@ body {
     "footer";
   grid-template-rows: auto 1fr auto;
   grid-template-columns: auto;
-  font-family: Roboto, sans-serif;
+  font-family: "Rubik", Arial, Helvetica, sans-serif;
 }
 
 header {
@@ -47,23 +54,66 @@ header {
 }
 header > nav {
   display: grid;
-  grid-template-columns: repeat(3, auto);
+  grid-template-columns: repeat(7, auto);
+  gap: 3em;
   place-content: center;
-  padding: 10px;
+  min-height: min(20rem, 30vh);
+  text-transform: uppercase;
+  font-family: "Rubik", Arial, Helvetica, sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 14px;
+  letter-spacing: 0.2em;
 }
 header > nav > a {
-  background-color: var(--color-background-main);
-  border-radius: 33px;
-  margin: 1em;
-  padding: 1em 2em;
+  color: var(--color-text-main);
+  border-radius: 28px;
   font-size: 1.2em;
   text-align: center;
+  text-decoration: none;
+  transition: scale 150ms ease-in;
+}
+header > nav > a:hover {
+  color: var(--color-text-link-hover);
+  scale: 1.2;
 }
 
 main {
   grid-area: main;
   place-self: center;
+  align-content: start;
   width: 100%;
+}
+main > section {
+  display: flex;
+  flex-direction: column;
+  flex-flow: column wrap;
+  justify-content: flex-start;
+  align-self: flex-start;
+  margin: 6em 0;
+  padding: 4em 0;
+  background-color: var(--color-background-base);
+}
+main > section:first-child {
+  margin-top: 40em;
+  padding: 4em 0;
+}
+main > section > article {
+  position: relative;
+  display: block;
+  flex-flow: column wrap;
+  justify-content: flex-start;
+  align-self: flex-start;
+
+  margin: 0 auto;
+  width: min(
+    99vw,
+    var(--site-size-width)
+  ); /* TODO move to media query for larger screens */
+  background: var(--color-background-main);
+
+  border-radius: 33px;
+  padding: 2em;
 }
 
 footer {
@@ -80,15 +130,24 @@ footer > address {
   margin: 1rem;
   padding: 2rem;
   width: min(240px, 30vw);
-  border-radius: 10px;
-  background-image: linear-gradient(165deg, #89898930, #bababa, #59595947);
+  background: radial-gradient(
+      ellipse at top,
+      var(--color-background-main),
+      transparent
+    ),
+    radial-gradient(ellipse at bottom, #002753f0, transparent);
+  border-top: 2px solid #ffffff4f;
   color: rgb(44, 44, 44, 44);
+  border-radius: 24px;
   filter: drop-shadow(0 4px 1rem rgb(40, 38, 38));
   transition: rotate 75ms ease-in, scale 100ms ease-in;
 }
 footer > address:hover {
   rotate: 2deg;
   scale: 1.25;
+}
+footer > address > p {
+  color: var(--color-text-accent);
 }
 footer > address > a {
   color: var(--color-text-link);
@@ -99,19 +158,38 @@ footer > address > a:hover {
   background: #333;
   text-decoration: underline;
 }
-section {
-  background-color: var(--color-background-base);
-  width: 100%;
-  margin: 10em 0;
-  padding: 4rem 0;
-}
-article {
-  background-color: transparent;
-  border-radius: 33px;
-  padding: 4rem 0;
-}
 
 :is(h1, h2, h3, h4, h5, h6) {
   text-align: center;
-  color: var(--color-text-main)
+  color: var(--color-text-main);
+}
+p {
+  color: var(--color-text-main);
+}
+
+/* Default settings - additional content */
+form ul {
+  display: flex;
+  justify-content: center;
+  flex-wrap: nowrap;
+  list-style: none;
+  margin: 0 auto;
+  padding: 10px;
+}
+form li {
+  justify-content: stretch;
+  align-self: stretch;
+  padding: 1px 4px;
+  width: auto;
+}
+form input {
+  margin: 0 1em;
+  padding: 0 1em;
+  height: 2.4em;
+  width: auto;
+  border-radius: 33px;
+  border: none;
+}
+form input[type="text"]:is(:active, :hover, :focus) {
+  background-color: #33333333;
 }

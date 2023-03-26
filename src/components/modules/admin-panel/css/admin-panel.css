@@ -1,0 +1,43 @@
+#admin-panel form {
+  display: flex;
+  flex-direction: row;
+  margin: 2rem 0;
+  padding: 2rem;
+  background-color: var(--color-background-accent);
+  border-radius: 33px;
+}
+#admin-panel form#user-search input[type="search"] {
+  width: 100%;
+}
+#admin-panel form :is(ul, label) {
+  color: #ebefef;
+}
+#admin-panel form#user-handle {
+  flex-wrap: wrap;
+  gap: 1em;
+}
+#admin-panel form#user-handle > :is(label, input) {
+  flex: 50%;
+}
+#admin-panel ul {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+#admin-panel ul > ol {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  align-items: start;
+  justify-content: baseline;
+  gap: 0.5em;
+  background: #33333331;
+  border-radius: 33px;
+  overflow-x: auto;
+}
+#admin-panel ul > ol > li {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  padding: 1em;
+}

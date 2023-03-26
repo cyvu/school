@@ -6,32 +6,37 @@ class Data {
   // #cors;
   // #content_type;
 
-  constructor() {
-    console.log("Data")
+  constructor(path) {
+    console.log("Data class loaded");
+    this.path = path
   }
 
   /**
    * Get data using fetch
    */
-  async get(path) {
-    await fetch(path, {
+  async get() {
+    return await fetch(this.path, {
       method: "GET",
       headers: { "Content-Type": "application/json" },
-      mode: "no-cors",
+      mode: "cors",
+      credentials: "same-origin", // include, *same-origin, omit
     })
-      .then((response) => {
+      .then(async (response) => {
         if (!response.ok) {
           throw new Error(
             `Network response was not ok: ${response.status} ${response.statusText}`
           );
         }
-        return response.json();
+        console.table("Response received");
+        return await response.json();
       })
-      .then((data) => {
-        console.log("Data received:", data);
+      .then(async (data) => {
+        console.table("Data received");
+        return await data;
       })
-      .catch((error) => {
+      .catch(async (error) => {
         console.error("There was a problem with the fetch request:", error);
+        return await error
       });
   }
 

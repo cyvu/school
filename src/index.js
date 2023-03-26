@@ -19,6 +19,10 @@ const modules = {
    * @var optional.css    Style file (optional)
    * @var optional.script Javascript file(s) (optional) (multiple not implemented atm)
    */
+  scripts: {
+    path: "/src/",
+    script: { data: "script/Data.js", users: "script/Users.js" },
+  },
   example: {
     path: "/src/components/modules/example/",
     file: "example.htm",
@@ -28,6 +32,17 @@ const modules = {
       img: "img/",
       css: "css/example.css",
       script: "js/example.js",
+    },
+  },
+  admin: {
+    path: "/src/components/modules/admin-panel/",
+    file: "admin-panel.htm",
+    target: document.getElementsByTagName("main"),
+    insertAt: "beforeend",
+    optional: {
+      img: "img/",
+      css: "css/admin-panel.css",
+      script: "js/admin-panel.js",
     },
   },
   todo: {
@@ -83,7 +98,7 @@ compileModules();
  * @function addModules() Constructs the additional modules and implements them asynchronously, sequentially
  */
 async function compileModules() {
-  await addBaseModules();  // Takes priority over the other modules
+  await addBaseModules(); // Takes priority over the other modules
   await addModules();
 }
 
@@ -113,6 +128,15 @@ async function addModules() {
   for (const name of Object.keys(modules)) {
     if (name === "example") continue;
     if (name === "base") continue;
+    if (name === "scripts") {
+      for (const _script of Object.keys(modules.scripts.script)) {
+        await addScript({
+          path: modules[name].path,
+          script: modules[name].script[_script],
+        });
+      }
+      continue;
+    }
 
     await addHTML({
       path: modules[name].path,
@@ -128,6 +152,13 @@ async function addModules() {
   }
 }
 
+// Add additional scripts
+async function addScript({ path, script }) {
+  const element = document.createElement("script");
+  element.setAttribute("src", path + script);
+  element.setAttribute("defer", true);
+  document.body.appendChild(element);
+}
 /**
  * @insertAt set a target to attach modules to
  */
@@ -163,6 +194,7 @@ async function addHTML({ path, file, target, insertAt, optional }) {
       element.setAttribute("defer", true);
       document.body.appendChild(element);
     }
+
     // Add module to site
     target[0].insertAdjacentHTML(insertAt, html);
   }
