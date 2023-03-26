@@ -1,0 +1,29 @@
+<section id="admin-panel">
+  <article>
+    <h1>Administrate Users</h1>
+
+    <form id="user-search" method="get">
+      <label for="search">Search:</label>
+      <input type="search" id="search" name="search" />
+      <button type="submit" name="getUsers" value="Get Users">Get Users</button>
+      <button type="submit" name="getUser" value="Get User">Get User</button>
+    </form>
+
+    <form id="user-handle" method="get">
+      <label for="id">Id </label>
+      <input type="text" id="id" name="id" />
+      <label for="firstname">Firstname</label
+      ><input type="text" id="firstname" name="firstname" />
+      <label for="lastname">Lastname</label
+      ><input type="text" id="lastname" name="lastname" />
+      <label for="email">Email</label
+      ><input type="text" id="email" name="email" />
+
+      <input type="submit" value="Add User" />
+      <input type="submit" value="Update User" />
+    </form>
+
+    <h3>Result:</h3>
+    <pre id="user_list"></pre>
+  </article>
+</section>

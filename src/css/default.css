@@ -83,10 +83,10 @@ main {
   grid-area: main;
   place-self: center;
   align-content: start;
+  align-content: start;
   width: 100%;
-  height: 100%;
-  scroll-snap-type: y proximity;
 }
+
 main > section {
   display: flex;
   flex-direction: column;

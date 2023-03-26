@@ -57,6 +57,17 @@ const modules = {
   ! Insert modules below this line
   */
 
+  admin: {
+    path: "/src/components/modules/admin-panel/",
+    file: "admin-panel.htm",
+    target: document.getElementsByTagName("main"),
+    insertAt: "beforeend",
+    optional: {
+      img: "img/",
+      css: "css/admin-panel.css",
+      script: "js/admin-panel.js",
+    },
+  },
   todo: {
     path: "/src/components/modules/todo/",
     file: "index.htm",
@@ -222,6 +233,7 @@ async function addHTML({ path, file, target, insertAt, optional }) {
       element.setAttribute("defer", true);
       document.body.appendChild(element);
     }
+
     // Add module to site
     target[0].insertAdjacentHTML(insertAt, html);
   }
