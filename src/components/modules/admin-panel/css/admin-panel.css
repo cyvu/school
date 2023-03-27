@@ -22,25 +22,25 @@
 #admin-panel form:is(#user-modifier) input[type="submit"]:first-child {
   margin-top: 2em;
 }
-#admin-panel ul {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
-#admin-panel ul > ol {
-  display: flex;
-  flex-wrap: nowrap;
-  flex-direction: row;
-  align-items: start;
-  justify-content: baseline;
-  gap: 0.5em;
-  background: #33333331;
-  border-radius: 33px;
-  overflow-x: auto;
-}
-#admin-panel ul > ol > li {
-  display: flex;
-  flex-direction: row;
-  align-items: baseline;
-  padding: 1em;
+
+#admin-panel #user_list {
+  display: grid;
+  grid-template-areas:
+    "title"
+    "header"
+    "list";
+  grid-template-rows: 2em auto auto;
+
+  --result-padding: 12em;
+  --result-width: calc(var(--site-size-width) - var(--result-padding) * 2);
+
+  --length-id: 2em;
+  --length-firstname: 7em;
+  --length-lastname: 7em; 
+  --length-email: 7em;
+  --length-last_logged_in: 6em;
+  --length-date_created: 6em;
+
+  /* multiply list entry with this */
+  --length-var: calc(var(--result-width) / (calc(var(--length-id) + var(--length-firstname) + var(--length-lastname) + var(--length-email) + var(--length-last_logged_in) + var(--length-date_created))));
 }
