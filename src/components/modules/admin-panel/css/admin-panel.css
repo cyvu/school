@@ -24,13 +24,6 @@
 }
 
 #admin-panel #user_list {
-  display: grid;
-  grid-template-areas:
-    "title"
-    "header"
-    "list";
-  grid-template-rows: 2em auto auto;
-
   --result-padding: 12em;
   --result-width: calc(var(--site-size-width) - var(--result-padding) * 2);
 
@@ -44,3 +37,5 @@
   /* multiply list entry with this */
   --length-var: calc(var(--result-width) / (calc(var(--length-id) + var(--length-firstname) + var(--length-lastname) + var(--length-email) + var(--length-last_logged_in) + var(--length-date_created))));
 }
+
+#admin-panel #user_list {}
