@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/cyvu/html-css#readme",
   "dependencies": {
+    "cors": "^2.8.5",
     "mysql": "^2.18.1"
   }
 }
