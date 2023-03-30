@@ -1,0 +1,43 @@
+#todo article {
+  margin: 0 auto;
+  border-radius: 33px;
+  background: var(--color-background-main);
+}
+
+#todo #form-todo > ul {
+  display: flex;
+  align-self: center;
+  align-items: flex-start;
+  align-content: space-between;
+  justify-self: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  list-style: none;
+  margin: 0 auto;
+  padding: 10px;
+  max-width: 800px;
+}
+
+#todo #form-todo > ul > li {
+  justify-content: stretch;
+  align-self: stretch;
+  padding: 1px 4px;
+  width: 100%;
+}
+
+#todo #form-todo > ul > li:first-child {width: auto;}
+#todo #form-todo > ul > li:nth-child(2) {width:100%;}
+#todo #form-todo > ul > li:nth-child(3) {width:auto}
+#todo #form-todo > ul > li:nth-child(4) {width:auto}
+
+#todo #form-todo > ul > li > input {
+  margin: 0 1em;
+  padding: 0 1em;
+  height: 2.4em;
+  width: auto;
+  border-radius: 33px;
+  border: none;
+}
+#todo #form-todo > ul > li > input[type="text"] {
+  width: 80%;
+}
