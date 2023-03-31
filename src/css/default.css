@@ -295,4 +295,3 @@ button:is(:active, :hover, :focus) {
 ::-webkit-scrollbar-thumb {
   background-color: var(--color-background-main);
 }
-*/
