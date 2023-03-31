@@ -40,9 +40,6 @@ button.user.post.addEventListener("click", postUser, false);
 button.user.update.addEventListener("click", updateUser, false);
 // button.user.delete.addEventListener("click", deleteUser, false);
 
-// Execute on load
-getUsers();
-
 // TODO move to helper functions
 function createElement(element, options, appendTo = false) {
   const _element = document.createElement(element);
@@ -65,6 +62,7 @@ async function getUsers() {
 
   query.then((response) => {
     const user_list_target = document.querySelector("#user_list");
+    user_list_target.replaceChildren()
 
     // Header
     const table = createElement("table", {}, user_list_target);
@@ -136,6 +134,7 @@ async function updateUser() {
     document.querySelector("#alert").innerHTML = "<p>User updated!</p>";
     setTimeout((res) => {
       document.querySelector("#alert").innerHTML = "";
+      getUsers()
     }, 5000);
   });
 }
