@@ -25,46 +25,60 @@ const modules = {
   },
   example: {
     path: "/src/components/modules/example/",
-    file: "example.htm",
-    target: document.getElementsByTagName("body"),
+    file: "index.htm",
+    target: document.getElementsByTagName("main"),
     insertAt: "afterbegin",
     optional: {
       img: "img/",
-      css: "css/example.css",
-      script: "js/example.js",
+      css: "css/style.css",
+      script: "js/script.js",
     },
+  },
+  divider1: {
+    path: "/src/components/modules/divider/",
+    file: "index.htm",
+    target: document.getElementsByTagName("main"),
+    insertAt: "beforeend",
+    optional: {},
   },
   admin: {
     path: "/src/components/modules/admin-panel/",
-    file: "admin-panel.htm",
+    file: "index.htm",
     target: document.getElementsByTagName("main"),
     insertAt: "beforeend",
     optional: {
       img: "img/",
-      css: "css/admin-panel.css",
-      script: "js/admin-panel.js",
+      css: "css/style.css",
+      script: "js/script.js",
     },
+  },
+  divider2: {
+    path: "/src/components/modules/divider/",
+    file: "index.htm",
+    target: document.getElementsByTagName("main"),
+    insertAt: "beforeend",
+    optional: {},
   },
   todo: {
     path: "/src/components/modules/todo/",
-    file: "todo.htm",
+    file: "index.htm",
     target: document.getElementsByTagName("main"),
     insertAt: "beforeend",
     optional: {
       img: "img/",
-      css: "css/todo.css",
-      script: "js/todo.js",
+      css: "css/style.css",
+      script: "js/script.js",
     },
   },
   gallery: {
     path: "/src/components/modules/gallery/",
-    file: "gallery.htm",
+    file: "index.htm",
     target: document.getElementsByTagName("main"),
     insertAt: "beforeend",
     optional: {
       img: "img/",
-      css: "css/gallery.css",
-      script: "js/gallery.js",
+      css: "css/style.css",
+      script: "js/script.js",
     },
   },
   base: {
@@ -195,22 +209,6 @@ async function addHTML({ path, file, target, insertAt, optional }) {
       document.body.appendChild(element);
     }
 
-    // Add module to site
-    target[0].insertAdjacentHTML(insertAt, html);
-  }
-}
-
-    /**
-     * Add script beneath module
-     * TODO: place before body end
-     * TODO2: send to script handler
-     */
-    if (optional && optional.script && typeof optional.script !== undefined) {
-      const element = document.createElement("script");
-      element.setAttribute("src", path + optional.script);
-      element.setAttribute("defer", true);
-      document.body.appendChild(element);
-    }
     // Add module to site
     target[0].insertAdjacentHTML(insertAt, html);
   }
