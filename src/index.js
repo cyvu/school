@@ -57,16 +57,30 @@ const modules = {
   ! Insert modules below this line
   */
 
+  divider1: {
+    path: "/src/components/modules/divider/",
+    file: "index.htm",
+    target: document.getElementsByTagName("main"),
+    insertAt: "beforeend",
+    optional: {},
+  },
   admin: {
     path: "/src/components/modules/admin-panel/",
-    file: "admin-panel.htm",
+    file: "index.htm",
     target: document.getElementsByTagName("main"),
     insertAt: "beforeend",
     optional: {
       img: "img/",
-      css: "css/admin-panel.css",
-      script: "js/admin-panel.js",
+      css: "css/style.css",
+      script: "js/script.js",
     },
+  },
+  divider2: {
+    path: "/src/components/modules/divider/",
+    file: "index.htm",
+    target: document.getElementsByTagName("main"),
+    insertAt: "beforeend",
+    optional: {},
   },
   todo: {
     path: "/src/components/modules/todo/",
