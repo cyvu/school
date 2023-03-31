@@ -285,3 +285,14 @@ button:is(:active, :hover, :focus) {
   background-color: var(--color-background-main);
 }
 */
+
+::-webkit-scrollbar {
+  width: 15px;
+}
+::-webkit-scrollbar-track {
+  background-color: var(--color-background-accent);
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--color-background-main);
+}
+*/
