@@ -99,12 +99,12 @@ const modules = {
   },
   digital_pet: {
     path: "/src/components/modules/digital-pet/",
-    file: "digital_pet.htm",
+    file: "index.htm",
     target: document.getElementsByTagName("main"),
     insertAt: "beforeend",
     optional: {
       img: "img/",
-      css: "css/digital_pet.css",
+      css: "css/style.css",
     },
   },
 
