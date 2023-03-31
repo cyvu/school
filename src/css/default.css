@@ -93,6 +93,7 @@ main > section {
   flex-flow: column wrap;
   justify-content: flex-start;
   align-self: flex-start;
+  margin: 8em 0;
   padding: 4em 0;
   background-color: var(--color-background-base);
   scroll-snap-align: start;
