@@ -1,9 +1,0 @@
-CREATE TABLE IF NOT EXISTS Users (
-  id INT AUTO_INCREMENT,
-  firstname VARCHAR NOT NULL,
-  lastname VARCHAR NOT NULL,
-  email VARCHAR NOT NULL,
-  last_logged_in TIMESTAMP,
-  date_created TIMESTAMP DEFAULT=CURRENT_TIMESTAMP(),
-  PRIMARY KEY (id)
-);
