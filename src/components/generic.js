@@ -21,7 +21,7 @@ const modules = {
    */
   scripts: {
     path: "/src/",
-    script: { data: "script/Data.js", users: "script/Users.js" },
+    script: { data: "js/Data.js", users: "js/Users.js" },
   },
   example: {
     path: "/src/components/modules/example/",
