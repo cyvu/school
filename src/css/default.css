@@ -29,7 +29,7 @@
 /* Default settings - main content */
 html {
   scroll-behavior: smooth;
-  background-image: url("/src/img/bg12.jpg");
+  background-image: url("/img/bg12.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;

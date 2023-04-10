@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
+  <base href="/structure/" target="_self">
+  <link rel="apple-touch-icon" sizes="180x180" href="img/icon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="img/icon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="img/icon/favicon-16x16.png">
+  <link rel="manifest" href="img/icon/site.webmanifest">
+  <link rel="preload" href="/img/bg12.jpg" as="image">
+  <link rel="preload" href="/img/bg5.jpg" as="image">
+  <meta property="og:title" content="">
+  <meta property="og:description" content="">
+  <meta property="description" content="">
+  <link rel="alternate" hreflang="se" href="https://localhost/se/">
+  <noscript></noscript>
+  <title>Index</title>
+</head>
+
+<body>
+  <header>
+    <nav>
+      <a href="#">Start</a>
+      <a href="/admin">Admin</a>
+      <a href="/todo">Todos</a>
+      <a href="/gallery">Gallery</a>
+      <a href="/structure">Structure</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Structure</h1>
+    <p>This page is used as a template to setup the default css markup of the project.</p>
+
+    <section>
+      <h2>A section containing articles with a variable depth</h2>
+      <article>
+        <h3>Article 1</h3>
+        <p>Article 1 text</p>
+      </article>
+
+      <article>
+        <h3>Article 2</h3>
+        <p>Article 2 text</p>
+      </article>
+
+      <article id="structure-local-links">
+        <h2>Local links</h2>
+        <aside>
+          <nav>
+            <a href="#structure-local-links">Start</a>
+            <a href="#structure-local-links-1">Link 1</a>
+            <a href="#structure-local-links-2">Link 2</a>
+            <a href="#structure-local-links-3">Link 3</a>
+          </nav>
+        </aside>
+
+        <section>
+          <h2>Local Link articles</h2>
+          <article id="structure-local-links-1">
+            <h3>Link 1</h3>
+            <p>The links next to this article are referenced to this article alone.</p>
+          </article>
+
+          <article id="structure-local-links-2">
+            <h3>Link 2</h3>
+            <p>
+              The second article within the links "section". Main is used instead as it would semantically show it is
+              a larger section with more depth than a regular section.
+            </p>
+            <img src="/img/bg2.jpg" width="200" height="200" alt="Capturing the universe in a bottle">
+          </article>
+
+          <article id="structure-local-links-3">
+            <h3>Link 3</h3>
+            <p>
+              This article is so far away from the start of this "links section" so i am providing a link to go to the
+              top of this section.
+            </p>
+            <a href="#structure-local-links">Back to links</a>
+          </article>
+        </section>
+      </article>
+
+      <article id="structure-forms">
+        <h2>Forms</h2>
+        <p>This section will have some forms to show off their default structure and style.</p>
+        <p>
+          The "name" attribute should always be applied to any element that sends any data (including buttons, hidden
+          inputs).
+        </p>
+        <p>The "id" is needed to associate elements to their label.</p>
+        <p>
+          The "autofocus" attribute moves the focus to this element once the page has loaded. Useful for a login form.
+        </p>
+
+        <section>
+          <form id="structure-form-labels">
+            <fieldset>
+              <legend>Label</legend>
+              <p>Labels should always be used for input types of text, checkbox, radio, file and password</p>
+              <label for="structure-form-label-example">Click this text</label>
+              <input id="structure-form-label-example" type="text"
+                value="The text of a label works like an extension to its linked element's functionality. In this case it selects the content of the text field.">
+            </fieldset>
+          </form>
+
+          <form id="structure-form-placeholders">
+            <fieldset>
+              <legend>Placeholder</legend>
+              <label for="structure-form-input-placeholder">Shows the difference bewteen placeholder and value within an
+                input element</label>
+              <input id="structure-form-input-placeholder" type="text"
+                placeholder="Shows a non-targetable text when value is empty"
+                value="Overriding placeholder with real text">
+            </fieldset>
+          </form>
+
+          <form id="structure-form-inputs">
+            <fieldset>
+              <legend>Input types</legend>
+              <input type="button" value="button">
+              <input type="checkbox" value="">
+              <input type="color" value="">
+              <input type="date" value="">
+              <input type="datetime-local" value="">
+              <input type="email" value="email">
+              <input type="file">
+              <input type="hidden" value="hidden">
+              <input type="image" src="/img/bg14.jpg" width="140" height="40" alt="diagonal drops">
+              <input type="month">
+              <input type="number" value="10" step="2">
+              <input type="password" value="password">
+              <input type="radio" checked>
+              <input type="range" min="10" max="20" value="18">
+              <input type="reset" value="">
+              <input type="search" value="">
+              <input type="submit" value="">
+              <input type="tel" value="">
+              <input type="text" value="Text content and character length &lt;= 20" autocomplete="on" size="16"
+                pattern="[a-zA-Z0-9]">
+              <input type="time" value="">
+              <input type="url" value="">
+              <input type="week" value="">
+
+              <p>Textarea (related):</p>
+              <textarea rows="2" cols="30">
+This is a larger text field and is more suited for paragraphs or larger pieces of text. You can also resize this field unless it has been turned off via settings.</textarea>
+              <textarea rows="2" cols="30" readonly>
+Readonly textarea. You can select and copy text, but not edit.</textarea>
+              <textarea rows="2" cols="30"
+                placeholder="This area requires text. Placeholder text isn't considered a value" required></textarea>
+              <textarea rows="2" cols="18" wrap="hard">Hard wrap contain new lines on submit</textarea>
+              <textarea rows="2" cols="18" wrap="soft">Soft wrap doesn't contain new lines on submit</textarea>
+            </fieldset>
+          </form>
+
+          <form id="structure-form-buttons">
+            <fieldset>
+              <legend>Button types</legend>
+              <p>
+                The text (value) of a button can be wrapped by other tags (span, i, b, etc), while an input of type
+                submit cannot.
+              </p>
+              <label for="structure-form-button-button">No hidden behaviour: </label>
+              <button id="structure-form-button-button" type="button">Button</button>
+              <label for="structure-form-button-reset">Resets the form it is linked to: </label>
+              <button id="structure-form-button-reset" type="reset">Reset</button>
+              <label for="structure-form-button-submit">Refreshes page on submit and more: </label>
+              <button id="structure-form-button-submit" type="submit">Submit</button>
+
+              <h3>Extra functionality</h3>
+              <button type="button">Basic button</button>
+              <button type="button" autofocus>Autofocus</button>
+              <button type="button" disabled>Disabled</button>
+              <button type="button" form="structure-form-buttons">Bound to the placeholder form</button>
+              <button type="button" name="button-name">Specific button name</button>
+              <button type="button" value="Text is set within the attribute instead"></button>
+
+              <h3>Submit specific attributes</h3>
+              <p>Required: type="submit"</p>
+              <button type="submit" formaction="/structure">Specify where to send the form data</button>
+              <button type="submit" formenctype="application/x-www-form-urlencoded">Send encrypted as x-www</button>
+              <button type="submit" formenctype="multipart/form-data">Send encrypted(?) as form-data</button>
+              <button type="submit" formenctype="text/plain">Send non-encrypted as plain text</button>
+              <button type="submit" formmethod="get">Send as a GET request</button>
+              <button type="submit" formmethod="post">Send as a POST request</button>
+              <button type="submit" formnovalidate>Data should not be validated on submission</button>
+              <button type="submit" formtarget="_blank">Open a new window</button>
+              <button type="submit" formtarget="_self">Open the same window</button>
+              <button type="submit" formtarget="_parent">Open the parent window</button>
+              <button type="submit" formtarget="_top">Dunno</button>
+              <button type="submit" formtarget="framename">
+                Open a frame (change framename to the correct name)
+              </button>
+            </fieldset>
+          </form>
+
+          <form id="structure-form-select">
+            <fieldset>
+              <legend>Select / Option</legend>
+              <label for="structure-form-select-options-one">One option:</label>
+              <select id="structure-form-select-options-one" required>
+                <option value="">Select an option</option>
+                <option value="opt1">Option 1</option>
+                <option value="opt2" disabled>"Disabled"</option>
+                <option value="opt3">Option 3</option>
+              </select>
+
+              <label for="structure-form-select-options-multiple">Multiple options (ctrl + click):</label>
+              <select id="structure-form-select-options-multiple" required multiple>
+                <option value="opt1">Option 1</option>
+                <option value="opt2">Option 2</option>
+                <option value="opt3">Option 3</option>
+                <option value="opt4">Option 4</option>
+                <option value="opt5">Option 5</option>
+                <option value="opt6">Option 6</option>
+              </select>
+
+              <label for="structure-form-select-options-size">Scrollabe list and groups:</label>
+              <select id="structure-form-select-options-size" size="4" required>
+                <optgroup label="Group 1:">
+                  <option value="opt1">Option 1</option>
+                  <option value="opt2">Option 2</option>
+                  <option value="opt3">Option 3</option>
+                  <option value="opt4">Option 4</option>
+                </optgroup>
+                <optgroup label="Group 2:">
+                  <option value="opt5">Option 5</option>
+                  <option value="opt6" selected>Option 6</option>
+                  <option value="opt7">Option 7</option>
+                </optgroup>
+                <optgroup label="Group 3:">
+                  <option value="opt8">Option 8</option>
+                  <option value="opt9">Option 9</option>
+                  <option value="opt10">Option 10</option>
+                </optgroup>
+              </select>
+            </fieldset>
+          </form>
+
+          <form id="structure-form-example" method="get">
+            <fieldset>
+              <legend>Complete form example</legend>
+
+              <label for="structure-form-example-text">Text: </label>
+              <input id="structure-form-example-text" type="text" placeholder="Text goes here"
+                value="Current text content">
+
+              <fieldset>
+                <legend>Checkboxes can have multiple checked</legend>
+                <input id="structure-form-example-checkbox1" type="checkbox" name="example-checkbox" value="value-1">
+                <label for="structure-form-example-checkbox1">Checkbox 1</label>
+
+                <input id="structure-form-example-checkbox2" type="checkbox" name="example-checkbox" value="value-2">
+                <label for="structure-form-example-checkbox2">Checkbox 2</label>
+
+                <input id="structure-form-example-checkbox3" type="checkbox" name="example-checkbox" value="value-3">
+                <label for="structure-form-example-checkbox3">Checkbox 3</label>
+              </fieldset>
+
+
+              <fieldset>
+                <legend>Radio with same name act as a group (only one checkable)</legend>
+                <input id="structure-form-example-radio1" type="radio" name="example-radio" value="value-1">
+                <label for="structure-form-example-radio1">Radio 1</label>
+
+                <input id="structure-form-example-radio2" type="radio" name="example-radio" value="value-2">
+                <label for="structure-form-example-radio2">Radio 2</label>
+
+                <input id="structure-form-example-radio3" type="radio" name="example-radio" value="value-3">
+                <label for="structure-form-example-radio3">Radio 3</label>
+              </fieldset>
+
+              <input type="button" value="button">
+              <input type="checkbox" value="">
+              <input type="color" value="">
+              <input type="date" value="">
+              <input type="datetime-local" value="">
+              <input type="email" value="email">
+              <input type="file">
+              <input type="hidden" value="hidden">
+              <input type="image" src="/img/bg14.jpg" width="140" height="40" alt="diagonal drops">
+              <input type="month">
+              <input type="number" value="10" step="2">
+              <input type="password" value="password">
+              <input type="radio" checked>
+              <input type="range" min="10" max="20" value="18">
+              <input type="reset" value="">
+              <input type="search" value="">
+              <input type="submit" value="">
+              <input type="tel" value="">
+              <input type="text" value="Text content and character length &lt;= 20" autocomplete="on" size="16"
+                pattern="[a-zA-Z0-9]">
+              <input type="time" value="">
+              <input type="url" value="">
+              <input type="week" value="">
+
+              <p>Textarea (related):</p>
+              <textarea rows="2" cols="30" placeholder="Enter text"></textarea>
+            </fieldset>
+          </form>
+          <form id="structure-form-attributes">
+            <h3>Form attributes</h3>
+          </form>
+        </section>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <address>
+      <p>Author: Cyvu</p>
+      <a href="mailto:noemail@yet.com">Mail: Cyvu</a>
+    </address>
+    <address>
+      <p>Author: Xokketeer</p>
+      <a href="mailto:noemail@yet.com">Mail: Xokketeer</a>
+    </address>
+  </footer>
+</body>
+
+</html>

@@ -7,34 +7,33 @@
 /**
  * Compile base components
  */
-const base = {
+export const base = {
   navigation: {
-    path: "/src/components/base/",
+    path: "base/",
     file: "navigation.htm",
     target: document.getElementsByTagName("body"),
-    insertAt: "beforeend",
+    pos: "beforeend",
   },
   main: {
-    path: "/src/components/base/",
+    path: "base/",
     file: "main.htm",
     target: document.getElementsByTagName("body"),
-    insertAt: "beforeend",
+    pos: "beforeend",
   },
   footer: {
-    path: "/src/components/base/",
+    path: "base/",
     file: "footer.htm",
     target: document.getElementsByTagName("body"),
-    insertAt: "beforeend",
+    pos: "beforeend",
   },
 
   scripts: {
-    path: "/src/components/base/",
+    path: "base/",
     script: { data: "js/Data.js", users: "js/Users.js" },
   },
 };
 
-// Compile everything
-injectBase();
+console.log(base)
 
 /**
  * Compiles the site
