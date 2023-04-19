@@ -51,6 +51,8 @@ body {
 header {
   grid-area: header;
   background-color: var(--color-background-base);
+  position: sticky;
+  top: 0%;
   
  
 }
@@ -67,6 +69,8 @@ header > nav {
   font-size: 14px;
   letter-spacing: 0.2em;
   align-items: start;
+  position: sticky;
+  top: 0%;
   
 
 }
@@ -78,9 +82,9 @@ header > nav > a {
   text-decoration: none;
   transition: scale 150ms ease-in;
   align-self: start;
-  
-
+  justify-content: center;
   position: sticky;
+  top: 0%;
   
 }
 header > nav > a:hover {
