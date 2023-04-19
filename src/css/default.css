@@ -51,6 +51,8 @@ body {
 header {
   grid-area: header;
   background-color: var(--color-background-base);
+  
+ 
 }
 header > nav {
   display: grid;
@@ -64,6 +66,9 @@ header > nav {
   font-style: normal;
   font-size: 14px;
   letter-spacing: 0.2em;
+  align-items: start;
+  
+
 }
 header > nav > a {
   color: var(--color-text-main);
@@ -72,6 +77,11 @@ header > nav > a {
   text-align: center;
   text-decoration: none;
   transition: scale 150ms ease-in;
+  align-self: start;
+  
+
+  position: sticky;
+  
 }
 header > nav > a:hover {
   color: var(--color-text-link-hover);
